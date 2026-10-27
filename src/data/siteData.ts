@@ -471,7 +471,7 @@ export const FAQ_DATA = [
   },
   {
     q: "Can you redesign my existing website?",
-    a: "Absolutely. We can take your old site and rebuild it from scratch with a modern design and faster loading."
+    a: "Absolutely. As a website designer in Akola, we can take your old site and rebuild it from scratch with a modern design and faster loading."
   },
   {
     q: "How do customers reach me through the site?",

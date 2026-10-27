@@ -41,7 +41,7 @@ export const About: React.FC = () => {
                 </span>
               </div>
               <p className="font-sans text-base sm:text-lg text-ink leading-relaxed font-medium">
-                I’m Darshan — I build custom websites and apps for shop owners, manufacturers, and local businesses. I handle everything directly from code to Google setup, so you never deal with sales reps or middleman agencies.
+                : I’m Darshan, a website developer in Akola — I build custom websites and apps for shop owners, manufacturers, and local businesses. I handle everything directly from code to Google setup, so you never deal with sales reps or middleman agencies.
               </p>
             </div>
           </Reveal>
