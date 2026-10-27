@@ -11,12 +11,20 @@ export const Navbar: React.FC<{ activeSectionId?: string }> = ({ activeSectionId
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const lastScrollY = useRef(0);
+  const isNavigatingRef = useRef(false);
+  const navTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
       setIsScrolled(currentScrollY > 40);
+
+      if (isNavigatingRef.current) {
+        lastScrollY.current = currentScrollY;
+        setIsVisible(true);
+        return;
+      }
 
       const delta = currentScrollY - lastScrollY.current;
       if (Math.abs(delta) < 8) return; // ignore tiny jitter
@@ -29,8 +37,23 @@ export const Navbar: React.FC<{ activeSectionId?: string }> = ({ activeSectionId
       lastScrollY.current = currentScrollY;
     };
 
+    const cancelNavLock = () => {
+      if (isNavigatingRef.current) {
+        isNavigatingRef.current = false;
+        lastScrollY.current = window.scrollY;
+      }
+    };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('wheel', cancelNavLock, { passive: true });
+    window.addEventListener('touchstart', cancelNavLock, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('wheel', cancelNavLock);
+      window.removeEventListener('touchstart', cancelNavLock);
+      if (navTimeoutRef.current) clearTimeout(navTimeoutRef.current);
+    };
   }, []);
 
   // Lock body scroll cleanly when menu is open without breaking document flow
@@ -58,6 +81,15 @@ export const Navbar: React.FC<{ activeSectionId?: string }> = ({ activeSectionId
     // 1. Close mobile menu cleanly if open
     closeMenu();
 
+    // Lock header visibility during smooth scroll so destination heading is never hidden
+    isNavigatingRef.current = true;
+    setIsVisible(true);
+    if (navTimeoutRef.current) clearTimeout(navTimeoutRef.current);
+    navTimeoutRef.current = window.setTimeout(() => {
+      isNavigatingRef.current = false;
+      lastScrollY.current = window.scrollY;
+    }, 1400);
+
     // 2. Identify target
     if (href === '#' || href === '#hero') {
       requestAnimationFrame(() => {
@@ -65,7 +97,14 @@ export const Navbar: React.FC<{ activeSectionId?: string }> = ({ activeSectionId
         if (lenis && typeof lenis.scrollTo === 'function') {
           lenis.start();
           lenis.targetScroll = NaN;
-          lenis.scrollTo(0, { offset: 0, force: true });
+          lenis.scrollTo(0, {
+            offset: 0,
+            force: true,
+            onComplete: () => {
+              isNavigatingRef.current = false;
+              lastScrollY.current = window.scrollY;
+            },
+          });
         } else {
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }
@@ -77,16 +116,33 @@ export const Navbar: React.FC<{ activeSectionId?: string }> = ({ activeSectionId
     const targetElement = document.querySelector(href);
     if (!targetElement) return;
 
-    // 3. Scroll to target section cleanly with 0 offset so the previous section never leaks
+    // Calculate responsive header offset so section heading is positioned right below the fixed navbar
+    const isDesktop = typeof window !== 'undefined' && window.innerWidth >= 768;
+    const headerOffset = isDesktop ? -88 : -80;
+
+    // 3. Scroll to target section cleanly with header offset so section heading is completely visible
     requestAnimationFrame(() => {
       const lenis = (window as any).__lenis;
       if (lenis && typeof lenis.scrollTo === 'function') {
         lenis.start();
         // Reset targetScroll so tapping the same link repeatedly always triggers a scroll
         lenis.targetScroll = NaN;
-        lenis.scrollTo(targetElement, { offset: 0, force: true });
+        lenis.scrollTo(targetElement, {
+          offset: headerOffset,
+          force: true,
+          onComplete: () => {
+            isNavigatingRef.current = false;
+            lastScrollY.current = window.scrollY;
+          },
+        });
       } else {
-        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const rect = targetElement.getBoundingClientRect();
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const targetPosition = rect.top + scrollTop + headerOffset;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth',
+        });
       }
       window.history.pushState(null, '', href);
     });

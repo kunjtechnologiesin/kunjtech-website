@@ -315,12 +315,12 @@ export const Pricing: React.FC = () => {
   };
 
   return (
-    <section id="pricing" className="py-6 md:py-5 lg:py-4 bg-grain border-b border-ink/15 relative overflow-hidden">
+    <section id="pricing" className="py-10 md:py-14 bg-grain border-b border-ink/15 relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
 
         {/* Section Header with integrated Static / Dynamic Toggle on desktop */}
         <Reveal>
-          <div className="mb-4 md:mb-3 pb-3 border-b border-ink/15 flex flex-col md:flex-row md:items-end justify-between gap-3">
+          <div className="mb-6 md:mb-5 pb-3 border-b border-ink/15 flex flex-col md:flex-row md:items-end justify-between gap-3">
             <div>
               <div className="font-mono text-xs text-vermilion-text uppercase tracking-widest mb-1 font-bold">
                 [ SECTION {sectionInfo.number} ] • PRICING
