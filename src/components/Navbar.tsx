@@ -180,6 +180,8 @@ export const Navbar: React.FC<{ activeSectionId?: string }> = ({ activeSectionId
                 alt={BRAND_NAME}
                 width={160}
                 height={114}
+                fetchPriority="high"
+                decoding="async"
                 className={`w-auto object-contain shrink-0 group-hover:scale-105 transition-all duration-300 ${isScrolled ? 'h-14 sm:h-14 md:h-16' : 'h-[72px] sm:h-20 md:h-[84px] lg:h-[92px]'
                   }`}
               />
