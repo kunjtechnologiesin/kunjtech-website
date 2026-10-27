@@ -116,11 +116,7 @@ export const Navbar: React.FC<{ activeSectionId?: string }> = ({ activeSectionId
     const targetElement = document.querySelector(href);
     if (!targetElement) return;
 
-    // Calculate responsive header offset so section heading is positioned right below the fixed navbar
-    const isDesktop = typeof window !== 'undefined' && window.innerWidth >= 768;
-    const headerOffset = isDesktop ? -88 : -80;
-
-    // 3. Scroll to target section cleanly with header offset so section heading is completely visible
+    // 3. Scroll to target section cleanly; CSS scroll-margin-top provides exact responsive header offset
     requestAnimationFrame(() => {
       const lenis = (window as any).__lenis;
       if (lenis && typeof lenis.scrollTo === 'function') {
@@ -128,7 +124,7 @@ export const Navbar: React.FC<{ activeSectionId?: string }> = ({ activeSectionId
         // Reset targetScroll so tapping the same link repeatedly always triggers a scroll
         lenis.targetScroll = NaN;
         lenis.scrollTo(targetElement, {
-          offset: headerOffset,
+          offset: 0,
           force: true,
           onComplete: () => {
             isNavigatingRef.current = false;
@@ -136,13 +132,7 @@ export const Navbar: React.FC<{ activeSectionId?: string }> = ({ activeSectionId
           },
         });
       } else {
-        const rect = targetElement.getBoundingClientRect();
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const targetPosition = rect.top + scrollTop + headerOffset;
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth',
-        });
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
       window.history.pushState(null, '', href);
     });

@@ -156,7 +156,7 @@ export const ClientDeliverables: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-12 md:py-24 bg-grain relative border-b border-ink/15 overflow-hidden">
+    <section id="contact" className="pt-24 pb-12 md:py-24 bg-grain relative border-b border-ink/15 overflow-hidden">
 
 
 
@@ -223,316 +223,311 @@ export const ClientDeliverables: React.FC = () => {
           <div className="lg:col-span-7">
             <Reveal delay={0.2}>
               <div className="bg-paper text-ink p-5 sm:p-7 rounded-lg border border-ink/30 shadow-mobile-soft lg:min-h-[560px] flex flex-col justify-center">
-              <AnimatePresence mode="wait">
-                {formSubmitted ? (
-                  <motion.div
-                    initial={{ opacity: 0, y: 12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -12 }}
-                    transition={{ duration: 0.35 }}
-                    className="py-8 sm:py-10 px-2 text-center font-sans flex flex-col items-center"
-                  >
-                    <div className="w-14 h-14 bg-emerald-700 text-paper rounded-full flex items-center justify-center shadow-sm">
-                      <CheckCircle2 className="w-8 h-8" />
-                    </div>
-
-                    <h4 className="mt-5 font-display font-black text-2xl sm:text-3xl uppercase tracking-tight text-ink">
-                      Thank you, {formData.name.split(' ')[0]}!
-                    </h4>
-
-                    <p className="mt-3 text-sm sm:text-base text-ink-muted max-w-md leading-relaxed">
-                      Your enquiry is ready in WhatsApp. Already sent it? You’re all set, and we reply
-                      within 1 hour.
-                    </p>
-                    <p className="mt-2 text-xs text-ink-muted max-w-md">
-                      WhatsApp didn’t open, or you haven’t sent it yet?{' '}
-                      <a
-                        href={waUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-bold text-vermilion-text underline underline-offset-2"
-                      >
-                        Open it with my details
-                      </a>
-                    </p>
-
-                    <div className="mt-6 flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-                      <a
-                        href={`https://wa.me/${WHATSAPP_NUMBER.replace('+', '')}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="min-h-[46px] inline-flex items-center justify-center gap-2 bg-vermilion-text hover:bg-vermilion-dark text-paper font-bold text-sm px-6 py-3 rounded-badge border-2 border-ink shadow-stamp transition-all"
-                      >
-                        <Send className="w-4 h-4" />
-                        <span>Open WhatsApp chat</span>
-                      </a>
-                      <a
-                        href={`mailto:${EMAIL}`}
-                        className="min-h-[46px] inline-flex items-center justify-center gap-2 bg-paper-dark/60 hover:bg-paper-dark text-ink font-bold text-sm px-6 py-3 rounded-badge border border-ink/30 transition-colors"
-                      >
-                        <Mail className="w-4 h-4" />
-                        <span>Email instead</span>
-                      </a>
-                    </div>
-
-                    <button
-                      onClick={resetForm}
-                      className="mt-5 inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-ink-muted hover:text-vermilion-text transition-colors min-h-[44px]"
+                <AnimatePresence mode="wait">
+                  {formSubmitted ? (
+                    <motion.div
+                      initial={{ opacity: 0, y: 12 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -12 }}
+                      transition={{ duration: 0.35 }}
+                      className="py-8 sm:py-10 px-2 text-center font-sans flex flex-col items-center"
                     >
-                      <RefreshCw className="w-4 h-4" />
-                      <span>Send another enquiry</span>
-                    </button>
-                  </motion.div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-4 font-sans" noValidate>
-                    <div className="font-mono text-xs text-vermilion-text font-bold uppercase mb-1">
-                      [ PROJECT ENQUIRY FORM ]
-                    </div>
+                      <div className="w-14 h-14 bg-emerald-700 text-paper rounded-full flex items-center justify-center shadow-sm">
+                        <CheckCircle2 className="w-8 h-8" />
+                      </div>
 
-                    {/* Name */}
-                    <div>
-                      <label htmlFor="input-name" className="block text-xs font-mono font-bold uppercase mb-1.5 text-ink">
-                        Your Name or Business Name *
-                      </label>
-                      <input
-                        id="input-name"
-                        type="text"
-                        required
-                        autoComplete="name"
-                        value={formData.name}
-                        onChange={(e) => {
-                          setFormData({ ...formData, name: e.target.value });
-                          if (nameError) setNameError('');
-                        }}
-                        onFocus={handleInputFocus}
-                        placeholder="e.g. Ramesh Patel / Shivam Construction"
-                        className="w-full bg-card border border-ink/30 p-3 rounded-badge font-sans text-base text-ink placeholder:text-ink-muted focus:outline-none focus:border-vermilion-text focus:ring-2 focus:ring-vermilion/20 transition-all duration-200 min-h-[46px]"
-                      />
-                      {nameError && (
-                        <span className="text-vermilion-text text-xs font-mono font-bold block mt-1" role="alert">
-                          {nameError}
-                        </span>
-                      )}
-                    </div>
+                      <h4 className="mt-5 font-display font-black text-2xl sm:text-3xl uppercase tracking-tight text-ink">
+                        Thank you, {formData.name.split(' ')[0]}!
+                      </h4>
 
-                    {/* Phone Number */}
-                    <div>
-                      <label htmlFor="input-phone" className="block text-xs font-mono font-bold uppercase mb-1.5 text-ink">
-                        Mobile / WhatsApp Number *
-                      </label>
-                      <input
-                        id="input-phone"
-                        type="tel"
-                        inputMode="numeric"
-                        maxLength={10}
-                        pattern="[0-9]{10}"
-                        autoComplete="tel"
-                        required
-                        value={formData.phone}
-                        onChange={(e) => {
-                          setFormData({ ...formData, phone: e.target.value.replace(/\D/g, '').slice(0, 10) });
-                          if (phoneError) setPhoneError('');
-                        }}
-                        onFocus={handleInputFocus}
-                        placeholder="10-digit mobile number, e.g. 9876543210"
-                        className={`w-full bg-card border p-3 rounded-badge font-sans text-base text-ink placeholder:text-ink-muted focus:outline-none transition-all duration-200 min-h-[46px] ${phoneError ? 'border-red-600 focus:ring-2 focus:ring-red-200' : 'border-ink/30 focus:border-vermilion-text focus:ring-2 focus:ring-vermilion/20'
-                          }`}
-                      />
-                      {phoneError && (
-                        <span className="text-xs text-red-600 font-mono font-bold block mt-1">
-                          {phoneError}
-                        </span>
-                      )}
-                    </div>
+                      <p className="mt-3 text-sm sm:text-base text-ink-muted max-w-md leading-relaxed">
+                        Your enquiry is ready in WhatsApp. Already sent it? You’re all set, and we reply
+                        within 1 hour.
+                      </p>
+                      <p className="mt-2 text-xs text-ink-muted max-w-md">
+                        WhatsApp didn’t open, or you haven’t sent it yet?{' '}
+                        <a
+                          href={waUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-bold text-vermilion-text underline underline-offset-2"
+                        >
+                          Open it with my details
+                        </a>
+                      </p>
 
-                    {/* Business Type Custom Dropdown */}
-                    <div ref={dropdownRef} className="relative">
-                      <label id="input-industry-label" className="block text-xs font-mono font-bold uppercase mb-1.5 text-ink">
-                        Business Type *
-                      </label>
+                      <div className="mt-6 flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+                        <a
+                          href={`https://wa.me/${WHATSAPP_NUMBER.replace('+', '')}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="min-h-[46px] inline-flex items-center justify-center gap-2 bg-vermilion-text hover:bg-vermilion-dark text-paper font-bold text-sm px-6 py-3 rounded-badge border-2 border-ink shadow-stamp transition-all"
+                        >
+                          <Send className="w-4 h-4" />
+                          <span>Open WhatsApp chat</span>
+                        </a>
+                        <a
+                          href={`mailto:${EMAIL}`}
+                          className="min-h-[46px] inline-flex items-center justify-center gap-2 bg-paper-dark/60 hover:bg-paper-dark text-ink font-bold text-sm px-6 py-3 rounded-badge border border-ink/30 transition-colors"
+                        >
+                          <Mail className="w-4 h-4" />
+                          <span>Email instead</span>
+                        </a>
+                      </div>
 
                       <button
-                        id="input-industry"
-                        type="button"
-                        role="combobox"
-                        aria-expanded={isDropdownOpen}
-                        aria-haspopup="listbox"
-                        aria-labelledby="input-industry-label"
-                        onClick={() => setIsDropdownOpen((prev) => !prev)}
-                        className={`w-full bg-card border p-3 rounded-badge font-sans text-left flex items-center justify-between gap-3 min-h-[50px] transition-all duration-200 outline-none cursor-pointer ${
-                          isDropdownOpen
-                            ? 'border-vermilion-text ring-2 ring-vermilion/20 shadow-sm'
-                            : industryError
-                              ? 'border-red-600 focus:ring-2 focus:ring-red-200'
-                              : 'border-ink/30 hover:border-ink/50 focus:border-vermilion-text focus:ring-2 focus:ring-vermilion/20'
-                        }`}
+                        onClick={resetForm}
+                        className="mt-5 inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-ink-muted hover:text-vermilion-text transition-colors min-h-[44px]"
                       >
-                        {(() => {
-                          const selectedOption = BUSINESS_TYPES.find((b) => b.value === formData.industry);
-                          const SelectedIcon = selectedOption?.icon;
+                        <RefreshCw className="w-4 h-4" />
+                        <span>Send another enquiry</span>
+                      </button>
+                    </motion.div>
+                  ) : (
+                    <form onSubmit={handleSubmit} className="space-y-4 font-sans" noValidate>
+                      <div className="font-mono text-xs text-vermilion-text font-bold uppercase mb-1">
+                        [ PROJECT ENQUIRY FORM ]
+                      </div>
 
-                          if (selectedOption && SelectedIcon) {
+                      {/* Name */}
+                      <div>
+                        <label htmlFor="input-name" className="block text-xs font-mono font-bold uppercase mb-1.5 text-ink">
+                          Your Name or Business Name *
+                        </label>
+                        <input
+                          id="input-name"
+                          type="text"
+                          required
+                          autoComplete="name"
+                          value={formData.name}
+                          onChange={(e) => {
+                            setFormData({ ...formData, name: e.target.value });
+                            if (nameError) setNameError('');
+                          }}
+                          onFocus={handleInputFocus}
+                          placeholder="e.g. Ramesh Patel / Shivam Construction"
+                          className="w-full bg-card border border-ink/30 p-3 rounded-badge font-sans text-base text-ink placeholder:text-ink-muted focus:outline-none focus:border-vermilion-text focus:ring-2 focus:ring-vermilion/20 transition-all duration-200 min-h-[46px]"
+                        />
+                        {nameError && (
+                          <span className="text-vermilion-text text-xs font-mono font-bold block mt-1" role="alert">
+                            {nameError}
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Phone Number */}
+                      <div>
+                        <label htmlFor="input-phone" className="block text-xs font-mono font-bold uppercase mb-1.5 text-ink">
+                          Mobile / WhatsApp Number *
+                        </label>
+                        <input
+                          id="input-phone"
+                          type="tel"
+                          inputMode="numeric"
+                          maxLength={10}
+                          pattern="[0-9]{10}"
+                          autoComplete="tel"
+                          required
+                          value={formData.phone}
+                          onChange={(e) => {
+                            setFormData({ ...formData, phone: e.target.value.replace(/\D/g, '').slice(0, 10) });
+                            if (phoneError) setPhoneError('');
+                          }}
+                          onFocus={handleInputFocus}
+                          placeholder="10-digit mobile number, e.g. 9876543210"
+                          className={`w-full bg-card border p-3 rounded-badge font-sans text-base text-ink placeholder:text-ink-muted focus:outline-none transition-all duration-200 min-h-[46px] ${phoneError ? 'border-red-600 focus:ring-2 focus:ring-red-200' : 'border-ink/30 focus:border-vermilion-text focus:ring-2 focus:ring-vermilion/20'
+                            }`}
+                        />
+                        {phoneError && (
+                          <span className="text-xs text-red-600 font-mono font-bold block mt-1">
+                            {phoneError}
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Business Type Custom Dropdown */}
+                      <div ref={dropdownRef} className="relative">
+                        <label id="input-industry-label" className="block text-xs font-mono font-bold uppercase mb-1.5 text-ink">
+                          Business Type *
+                        </label>
+
+                        <button
+                          id="input-industry"
+                          type="button"
+                          role="combobox"
+                          aria-expanded={isDropdownOpen}
+                          aria-haspopup="listbox"
+                          aria-labelledby="input-industry-label"
+                          onClick={() => setIsDropdownOpen((prev) => !prev)}
+                          className={`w-full bg-card border p-3 rounded-badge font-sans text-left flex items-center justify-between gap-3 min-h-[50px] transition-all duration-200 outline-none cursor-pointer ${isDropdownOpen
+                              ? 'border-vermilion-text ring-2 ring-vermilion/20 shadow-sm'
+                              : industryError
+                                ? 'border-red-600 focus:ring-2 focus:ring-red-200'
+                                : 'border-ink/30 hover:border-ink/50 focus:border-vermilion-text focus:ring-2 focus:ring-vermilion/20'
+                            }`}
+                        >
+                          {(() => {
+                            const selectedOption = BUSINESS_TYPES.find((b) => b.value === formData.industry);
+                            const SelectedIcon = selectedOption?.icon;
+
+                            if (selectedOption && SelectedIcon) {
+                              return (
+                                <span className="flex items-center gap-2.5 min-w-0">
+                                  <span className="w-7 h-7 rounded-md bg-vermilion-text/10 text-vermilion-text flex items-center justify-center shrink-0">
+                                    <SelectedIcon className="w-4 h-4" />
+                                  </span>
+                                  <span className="font-sans font-semibold text-ink text-sm sm:text-base truncate">
+                                    {selectedOption.label}
+                                  </span>
+                                </span>
+                              );
+                            }
+
                             return (
-                              <span className="flex items-center gap-2.5 min-w-0">
-                                <span className="w-7 h-7 rounded-md bg-vermilion-text/10 text-vermilion-text flex items-center justify-center shrink-0">
-                                  <SelectedIcon className="w-4 h-4" />
-                                </span>
-                                <span className="font-sans font-semibold text-ink text-sm sm:text-base truncate">
-                                  {selectedOption.label}
-                                </span>
+                              <span className="font-sans text-sm sm:text-base text-ink-muted">
+                                {formData.industry || 'Select your business type...'}
                               </span>
                             );
-                          }
+                          })()}
 
-                          return (
-                            <span className="font-sans text-sm sm:text-base text-ink-muted">
-                              {formData.industry || 'Select your business type...'}
-                            </span>
-                          );
-                        })()}
+                          <ChevronDown
+                            className={`w-4 h-4 shrink-0 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180 text-vermilion-text' : 'text-ink-muted'
+                              }`}
+                          />
+                        </button>
 
-                        <ChevronDown
-                          className={`w-4 h-4 shrink-0 transition-transform duration-200 ${
-                            isDropdownOpen ? 'rotate-180 text-vermilion-text' : 'text-ink-muted'
-                          }`}
-                        />
-                      </button>
+                        {/* Hidden form input for standard validation and autofill compatibility */}
+                        <input type="hidden" name="industry" value={formData.industry} />
 
-                      {/* Hidden form input for standard validation and autofill compatibility */}
-                      <input type="hidden" name="industry" value={formData.industry} />
+                        {/* Floating Custom Dropdown Menu */}
+                        <AnimatePresence>
+                          {isDropdownOpen && (
+                            <motion.div
+                              initial={{ opacity: 0, y: -6, scale: 0.98 }}
+                              animate={{ opacity: 1, y: 0, scale: 1 }}
+                              exit={{ opacity: 0, y: -6, scale: 0.98 }}
+                              transition={{ duration: 0.15, ease: 'easeOut' }}
+                              role="listbox"
+                              aria-labelledby="input-industry-label"
+                              data-lenis-prevent
+                              onWheel={(e) => e.stopPropagation()}
+                              onTouchMove={(e) => e.stopPropagation()}
+                              className="absolute top-[calc(100%+6px)] left-0 right-0 z-50 bg-paper border-2 border-ink rounded-xl shadow-stamp shadow-2xl p-1.5 max-h-[300px] overflow-y-auto space-y-1 overscroll-contain dropdown-scroll"
+                            >
+                              <div className="px-2.5 py-1 text-[10px] font-mono font-bold uppercase tracking-wider text-ink-muted flex items-center justify-between border-b border-ink/10 pb-1.5 mb-1">
+                                <span>Choose Your Industry</span>
+                                <span>{BUSINESS_TYPES.length} Categories</span>
+                              </div>
 
-                      {/* Floating Custom Dropdown Menu */}
-                      <AnimatePresence>
-                        {isDropdownOpen && (
-                          <motion.div
-                            initial={{ opacity: 0, y: -6, scale: 0.98 }}
-                            animate={{ opacity: 1, y: 0, scale: 1 }}
-                            exit={{ opacity: 0, y: -6, scale: 0.98 }}
-                            transition={{ duration: 0.15, ease: 'easeOut' }}
-                            role="listbox"
-                            aria-labelledby="input-industry-label"
-                            data-lenis-prevent
-                            onWheel={(e) => e.stopPropagation()}
-                            onTouchMove={(e) => e.stopPropagation()}
-                            className="absolute top-[calc(100%+6px)] left-0 right-0 z-50 bg-paper border-2 border-ink rounded-xl shadow-stamp shadow-2xl p-1.5 max-h-[300px] overflow-y-auto space-y-1 overscroll-contain dropdown-scroll"
-                          >
-                            <div className="px-2.5 py-1 text-[10px] font-mono font-bold uppercase tracking-wider text-ink-muted flex items-center justify-between border-b border-ink/10 pb-1.5 mb-1">
-                              <span>Choose Your Industry</span>
-                              <span>{BUSINESS_TYPES.length} Categories</span>
-                            </div>
-
-                            {BUSINESS_TYPES.map((item) => {
-                              const isSelected = formData.industry === item.value;
-                              const ItemIcon = item.icon;
-                              return (
-                                <button
-                                  key={item.value}
-                                  type="button"
-                                  role="option"
-                                  aria-selected={isSelected}
-                                  onClick={() => {
-                                    setFormData((prev) => ({ ...prev, industry: item.value }));
-                                    if (industryError) setIndustryError('');
-                                    setIsDropdownOpen(false);
-                                  }}
-                                  className={`w-full text-left p-2.5 rounded-lg transition-all duration-150 flex items-center justify-between gap-3 group cursor-pointer ${
-                                    isSelected
-                                      ? 'bg-card border border-ink/20 shadow-sm'
-                                      : 'hover:bg-card/80 border border-transparent hover:border-ink/10'
-                                  }`}
-                                >
-                                  <div className="flex items-center gap-3 min-w-0">
-                                    <span
-                                      className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
-                                        isSelected
-                                          ? 'bg-vermilion-text text-paper shadow-sm'
-                                          : 'bg-paper-dark text-ink group-hover:bg-vermilion-text/10 group-hover:text-vermilion-text'
+                              {BUSINESS_TYPES.map((item) => {
+                                const isSelected = formData.industry === item.value;
+                                const ItemIcon = item.icon;
+                                return (
+                                  <button
+                                    key={item.value}
+                                    type="button"
+                                    role="option"
+                                    aria-selected={isSelected}
+                                    onClick={() => {
+                                      setFormData((prev) => ({ ...prev, industry: item.value }));
+                                      if (industryError) setIndustryError('');
+                                      setIsDropdownOpen(false);
+                                    }}
+                                    className={`w-full text-left p-2.5 rounded-lg transition-all duration-150 flex items-center justify-between gap-3 group cursor-pointer ${isSelected
+                                        ? 'bg-card border border-ink/20 shadow-sm'
+                                        : 'hover:bg-card/80 border border-transparent hover:border-ink/10'
                                       }`}
-                                    >
-                                      <ItemIcon className="w-4 h-4" />
-                                    </span>
-                                    <div className="min-w-0">
-                                      <div
-                                        className={`font-display font-bold text-xs sm:text-sm leading-tight truncate ${
-                                          isSelected ? 'text-vermilion-text' : 'text-ink'
-                                        }`}
+                                  >
+                                    <div className="flex items-center gap-3 min-w-0">
+                                      <span
+                                        className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-colors ${isSelected
+                                            ? 'bg-vermilion-text text-paper shadow-sm'
+                                            : 'bg-paper-dark text-ink group-hover:bg-vermilion-text/10 group-hover:text-vermilion-text'
+                                          }`}
                                       >
-                                        {item.label}
-                                      </div>
-                                      <div className="font-sans text-[11px] text-ink-muted leading-tight mt-0.5 truncate">
-                                        {item.desc}
+                                        <ItemIcon className="w-4 h-4" />
+                                      </span>
+                                      <div className="min-w-0">
+                                        <div
+                                          className={`font-display font-bold text-xs sm:text-sm leading-tight truncate ${isSelected ? 'text-vermilion-text' : 'text-ink'
+                                            }`}
+                                        >
+                                          {item.label}
+                                        </div>
+                                        <div className="font-sans text-[11px] text-ink-muted leading-tight mt-0.5 truncate">
+                                          {item.desc}
+                                        </div>
                                       </div>
                                     </div>
-                                  </div>
-                                  {isSelected && (
-                                    <span className="w-5 h-5 rounded-full bg-emerald-600 text-paper flex items-center justify-center shrink-0">
-                                      <Check className="w-3 h-3" strokeWidth={3} />
-                                    </span>
-                                  )}
-                                </button>
-                              );
-                            })}
-                          </motion.div>
+                                    {isSelected && (
+                                      <span className="w-5 h-5 rounded-full bg-emerald-600 text-paper flex items-center justify-center shrink-0">
+                                        <Check className="w-3 h-3" strokeWidth={3} />
+                                      </span>
+                                    )}
+                                  </button>
+                                );
+                              })}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+
+                        {industryError && (
+                          <span className="text-xs text-red-600 font-mono font-bold block mt-1">
+                            {industryError}
+                          </span>
                         )}
-                      </AnimatePresence>
+                      </div>
 
-                      {industryError && (
-                        <span className="text-xs text-red-600 font-mono font-bold block mt-1">
-                          {industryError}
-                        </span>
-                      )}
-                    </div>
+                      {/* Website / Maps Link */}
+                      <div>
+                        <label htmlFor="input-web-or-maps" className="block text-xs font-mono font-bold uppercase mb-1.5 text-ink">
+                          Your business website or Google Maps link (optional)
+                        </label>
+                        <input
+                          id="input-web-or-maps"
+                          type="url"
+                          inputMode="url"
+                          autoComplete="url"
+                          value={formData.webOrMaps}
+                          onChange={(e) => setFormData({ ...formData, webOrMaps: e.target.value })}
+                          onFocus={handleInputFocus}
+                          placeholder="https://g.co/kgs/... or existing site link"
+                          className="w-full bg-card border border-ink/30 p-3 rounded-badge font-sans text-base text-ink placeholder:text-ink-muted focus:outline-none focus:border-vermilion-text focus:ring-2 focus:ring-vermilion/20 transition-all duration-200 min-h-[46px]"
+                        />
+                      </div>
 
-                    {/* Website / Maps Link */}
-                    <div>
-                      <label htmlFor="input-web-or-maps" className="block text-xs font-mono font-bold uppercase mb-1.5 text-ink">
-                        Your business website or Google Maps link (optional)
-                      </label>
-                      <input
-                        id="input-web-or-maps"
-                        type="url"
-                        inputMode="url"
-                        autoComplete="url"
-                        value={formData.webOrMaps}
-                        onChange={(e) => setFormData({ ...formData, webOrMaps: e.target.value })}
-                        onFocus={handleInputFocus}
-                        placeholder="https://g.co/kgs/... or existing site link"
-                        className="w-full bg-card border border-ink/30 p-3 rounded-badge font-sans text-base text-ink placeholder:text-ink-muted focus:outline-none focus:border-vermilion-text focus:ring-2 focus:ring-vermilion/20 transition-all duration-200 min-h-[46px]"
-                      />
-                    </div>
+                      {/* Message */}
+                      <div>
+                        <label htmlFor="input-message" className="block text-xs font-mono font-bold uppercase mb-1.5 text-ink">
+                          Short Message (Optional)
+                        </label>
+                        <textarea
+                          id="input-message"
+                          rows={3}
+                          value={formData.message}
+                          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                          onFocus={handleInputFocus}
+                          placeholder="Tell us about your website requirements..."
+                          className="w-full bg-card border border-ink/30 p-3 rounded-badge font-sans text-base text-ink placeholder:text-ink-muted focus:outline-none focus:border-vermilion-text focus:ring-2 focus:ring-vermilion/20 transition-all duration-200"
+                        />
+                      </div>
 
-                    {/* Message */}
-                    <div>
-                      <label htmlFor="input-message" className="block text-xs font-mono font-bold uppercase mb-1.5 text-ink">
-                        Short Message (Optional)
-                      </label>
-                      <textarea
-                        id="input-message"
-                        rows={3}
-                        value={formData.message}
-                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        onFocus={handleInputFocus}
-                        placeholder="Tell us about your website requirements..."
-                        className="w-full bg-card border border-ink/30 p-3 rounded-badge font-sans text-base text-ink placeholder:text-ink-muted focus:outline-none focus:border-vermilion-text focus:ring-2 focus:ring-vermilion/20 transition-all duration-200"
-                      />
-                    </div>
+                      {/* Big Full-Width Submit Button */}
+                      <button
+                        type="submit"
+                        className="w-full bg-vermilion-text hover:bg-vermilion-dark text-paper font-sans font-bold text-base py-4 min-h-[50px] rounded-badge border-2 border-ink shadow-sm transition-all flex items-center justify-center gap-2 cursor-pointer"
+                      >
+                        <Send className="w-4 h-4" />
+                        <span>Send on WhatsApp</span>
+                      </button>
+                    </form>
+                  )}
+                </AnimatePresence>
+              </div>
+            </Reveal>
+          </div>
 
-                    {/* Big Full-Width Submit Button */}
-                    <button
-                      type="submit"
-                      className="w-full bg-vermilion-text hover:bg-vermilion-dark text-paper font-sans font-bold text-base py-4 min-h-[50px] rounded-badge border-2 border-ink shadow-sm transition-all flex items-center justify-center gap-2 cursor-pointer"
-                    >
-                      <Send className="w-4 h-4" />
-                      <span>Send on WhatsApp</span>
-                    </button>
-                  </form>
-                )}
-              </AnimatePresence>
-            </div>
-          </Reveal>
         </div>
-
-      </div>
 
       </div>
     </section>

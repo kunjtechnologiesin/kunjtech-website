@@ -115,20 +115,13 @@ export function triggerFormCta(prefillMessage?: string): void {
   // On desktop, scroll smoothly to #contact offset by header height
   const contactEl = document.getElementById('contact');
   if (contactEl) {
-    const isDesktop = typeof window !== 'undefined' && window.innerWidth >= 768;
-    const headerHeight = isDesktop ? 88 : 80;
     const lenis = (window as any).__lenis;
     if (lenis && typeof lenis.scrollTo === 'function') {
       lenis.start();
       lenis.targetScroll = NaN;
-      lenis.scrollTo(contactEl, { offset: -headerHeight, force: true });
+      lenis.scrollTo(contactEl, { offset: 0, force: true });
     } else {
-      const elementPosition = contactEl.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
+      contactEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 

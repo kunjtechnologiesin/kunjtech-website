@@ -14,15 +14,21 @@
     line-height: 1.6;
   }
 
-  section[id],
-  [id] {
-    scroll-margin-top: 80px;
+  secti section[id],
+  #domain-hosting {
+    scroll-margin-top: 0px;
+  }
+
+  on[id],
+  #domain-hosting {
+    scroll-margin-top: 55px;
   }
 
   @media (min-width: 768px) {
+
     section[id],
-    [id] {
-      scroll-margin-top: 96px;
+    #domain-hosting {
+      scroll-margin-top: 65px;
     }
   }
 

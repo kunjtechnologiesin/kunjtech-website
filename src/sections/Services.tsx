@@ -21,7 +21,7 @@ export const Services: React.FC = () => {
   };
 
   return (
-    <section id="services" className="py-14 md:py-28 bg-grain border-b border-ink/15 relative overflow-hidden">
+    <section id="services" className="pt-24 pb-14 md:py-28 bg-grain border-b border-ink/15 relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
 
         {/* Section Header */}

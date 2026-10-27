@@ -41,7 +41,7 @@ export const WhatYouGet: React.FC = () => {
   const sectionInfo = getSectionConfig('included');
 
   return (
-    <section id="included" className="py-12 md:py-14 bg-paper border-b border-ink/15 relative overflow-hidden">
+    <section id="included" className="pt-24 pb-12 md:pt-28 md:pb-14 bg-paper border-b border-ink/15 relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
 
         {/* Compact Section Header */}

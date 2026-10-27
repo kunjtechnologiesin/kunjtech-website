@@ -9,7 +9,7 @@ export const About: React.FC = () => {
   const sectionInfo = getSectionConfig('about');
 
   return (
-    <section id="about" className="py-12 md:py-24 bg-paper border-b border-ink/15 relative overflow-hidden">
+    <section id="about" className="pt-24 pb-12 md:py-24 bg-paper border-b border-ink/15 relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
 
         {/* Section Header */}
@@ -41,7 +41,7 @@ export const About: React.FC = () => {
                 </span>
               </div>
               <p className="font-sans text-base sm:text-lg text-ink leading-relaxed font-medium">
-                : I’m Darshan, a website developer in Akola — I build custom websites and apps for shop owners, manufacturers, and local businesses. I handle everything directly from code to Google setup, so you never deal with sales reps or middleman agencies.
+                I’m Darshan, a website developer in Akola — I build custom websites and apps for shop owners, manufacturers, and local businesses. I handle everything directly from code to Google setup, so you never deal with sales reps or middleman agencies.
               </p>
             </div>
           </Reveal>

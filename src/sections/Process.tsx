@@ -307,7 +307,7 @@ export const Process: React.FC = () => {
 
   return (
     <MotionConfig reducedMotion="user">
-      <section id="process" className="relative overflow-hidden border-b border-ink/15 bg-paper py-12 md:py-14">
+      <section id="process" className="relative overflow-hidden border-b border-ink/15 bg-paper pt-24 pb-12 md:pt-28 md:pb-14">
         <style>{`@keyframes processFill{from{transform:scaleX(0)}to{transform:scaleX(1)}}`}</style>
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
 

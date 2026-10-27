@@ -315,7 +315,7 @@ export const Pricing: React.FC = () => {
   };
 
   return (
-    <section id="pricing" className="py-10 md:py-14 bg-grain border-b border-ink/15 relative overflow-hidden">
+    <section id="pricing" className="pt-24 pb-10 md:pt-28 md:pb-14 bg-grain border-b border-ink/15 relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
 
         {/* Section Header with integrated Static / Dynamic Toggle on desktop */}
