@@ -33,7 +33,7 @@ export const BRAND_CONFIG = {
       href: "https://wa.me/919511817720?text=Hi%20Kunj%20Technologies%2C%20I%20saw%20your%20website%20and%20would%20like%20to%20discuss%20a%20project%20for%20my%20business.",
     },
     // TODO: Update with official social media handles
-    { name: "Instagram", href: "https://instagram.com" },
+    { name: "Instagram", href: "https://www.instagram.com/kunjtechnologies.in" },
   ],
 } as const;
 
