@@ -122,8 +122,8 @@ export const IntroVideo: React.FC = () => {
 };
 /* ───────── 5. Privacy & Terms (place just above Footer) ───────── */
 const POLICY_DATE = 'October 26, 2026';
-const SITE_URL = 'https://developer-website-orpin.vercel.app';
-const CONTACT_EMAIL = 'darshanjogi36@gmail.com';
+const SITE_URL = 'https://kunjtechnologies.in';
+const CONTACT_EMAIL = 'kunjtechnologies.in@gmail.com';
 const CONTACT_PHONE_DISPLAY = '+91 9511817720';
 const CONTACT_PHONE_LINK = 'tel:+919511817720';
 

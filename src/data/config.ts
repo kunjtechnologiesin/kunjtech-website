@@ -20,7 +20,7 @@ export const BRAND_CONFIG = {
   domain: "", // [TODO: Domain pending client purchase]
 
   // Verified business email
-  email: "darshanjogi36@gmail.com",
+  email: "kunjtechnologies.in@gmail.com",
 
   // Official Brand Logos
   logo: "/logo.png",
