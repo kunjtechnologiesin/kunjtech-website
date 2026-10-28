@@ -146,7 +146,7 @@ export const Services: React.FC = () => {
                     {priceLabel}
                   </span>
                   {audienceLabel && (
-                    <span className="font-mono text-[11px] uppercase tracking-wider text-paper/70">
+                    <span className="font-mono text-[11px] uppercase tracking-wider text-paper/90">
                       {audienceLabel}
                     </span>
                   )}
@@ -156,7 +156,7 @@ export const Services: React.FC = () => {
                   {activeService.title}
                 </h3>
 
-                <p className="font-sans text-sm leading-relaxed text-paper/75 mb-5">
+                <p className="font-sans text-sm leading-relaxed text-paper/90 mb-5">
                   {activeService.description}
                 </p>
 

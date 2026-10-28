@@ -3,25 +3,47 @@ import { useState, useEffect } from 'react';
 import { useLenis } from './hooks/useLenis';
 import { Navbar } from './components/Navbar';
 import { Hero } from './sections/Hero';
-import { Portfolio } from './sections/Portfolio';
-import { Services } from './sections/Services';
-import { WhatYouGet } from './sections/WhatYouGet';
-import { Process } from './sections/Process';
-import { About } from './sections/About';
-import { Pricing } from './sections/Pricing';
+import { lazy, Suspense } from 'react';
 
-import { FAQ } from './sections/FAQ';
-import { ClientDeliverables } from './sections/ClientDeliverables';
-import { Footer } from './sections/Footer';
-import { Testimonials, IntroVideo, Policies } from './sections/Extras';
-import { FloatingActions } from './components/FloatingActions';
-
+const loaders = {
+  Portfolio: () => import('./sections/Portfolio').then((m) => ({ default: m.Portfolio })),
+  Services: () => import('./sections/Services').then((m) => ({ default: m.Services })),
+  WhatYouGet: () => import('./sections/WhatYouGet').then((m) => ({ default: m.WhatYouGet })),
+  Process: () => import('./sections/Process').then((m) => ({ default: m.Process })),
+  About: () => import('./sections/About').then((m) => ({ default: m.About })),
+  Pricing: () => import('./sections/Pricing').then((m) => ({ default: m.Pricing })),
+  FAQ: () => import('./sections/FAQ').then((m) => ({ default: m.FAQ })),
+  ClientDeliverables: () => import('./sections/ClientDeliverables').then((m) => ({ default: m.ClientDeliverables })),
+  Footer: () => import('./sections/Footer').then((m) => ({ default: m.Footer })),
+  Extras: () => import('./sections/Extras'),
+  FloatingActions: () => import('./components/FloatingActions').then((m) => ({ default: m.FloatingActions })),
+};
+const Portfolio = lazy(loaders.Portfolio);
+const Services = lazy(loaders.Services);
+const WhatYouGet = lazy(loaders.WhatYouGet);
+const Process = lazy(loaders.Process);
+const About = lazy(loaders.About);
+const Pricing = lazy(loaders.Pricing);
+const FAQ = lazy(loaders.FAQ);
+const ClientDeliverables = lazy(loaders.ClientDeliverables);
+const Footer = lazy(loaders.Footer);
+const FloatingActions = lazy(loaders.FloatingActions);
+const IntroVideo = lazy(() => loaders.Extras().then((m) => ({ default: m.IntroVideo })));
+const Testimonials = lazy(() => loaders.Extras().then((m) => ({ default: m.Testimonials })));
+const Policies = lazy(() => loaders.Extras().then((m) => ({ default: m.Policies })));
 
 export function App() {
   const [activeId, setActiveId] = useState<string>('');
 
   // Enable Lenis smooth momentum scrolling
   useLenis();
+
+  useEffect(() => {
+    const warm = () => Object.values(loaders).forEach((load) => load());
+    const w = window as Window & { requestIdleCallback?: (cb: () => void) => number };
+    if (w.requestIdleCallback) w.requestIdleCallback(warm);
+    else setTimeout(warm, 2500);
+  }, []);
 
   useEffect(() => {
     const sectionIds = [
@@ -66,23 +88,26 @@ export function App() {
 
       <main id="main">
         <Hero />
-        <IntroVideo />
-        <Portfolio />
-        <Services />
-        <WhatYouGet />
-        <Process />
-        <About />
-        <Testimonials />
-        <Pricing />
+        <Suspense fallback={<div style={{ minHeight: '100vh' }} />}>
+          <IntroVideo />
+          <Portfolio />
+          <Services />
+          <WhatYouGet />
+          <Process />
+          <About />
+          <Testimonials />
+          <Pricing />
 
-        <FAQ />
-        <ClientDeliverables />
-        <Policies />
+          <FAQ />
+          <ClientDeliverables />
+          <Policies />
+        </Suspense>
       </main>
 
-      <Footer />
-
-      <FloatingActions />
+      <Suspense fallback={null}>
+        <Footer />
+        <FloatingActions />
+      </Suspense>
     </div>
   );
 }

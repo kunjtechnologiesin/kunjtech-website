@@ -1,42 +1,45 @@
 import { useEffect } from 'react';
-import Lenis from 'lenis';
 
 export function useLenis() {
   useEffect(() => {
-    // Respect user prefers-reduced-motion setting
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      return;
-    }
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) return;
 
-    // Skip Lenis on touch devices (phones/tablets) where native momentum scrolling is hardware-accelerated
-    if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
-      return;
-    }
+    let cancelled = false;
+    let cleanup: (() => void) | undefined;
 
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-      anchors: {
-        offset: 0,
-      },
-    });
+    const start = () =>
+      import('lenis').then(({ default: Lenis }) => {
+        if (cancelled) return;
+        const lenis = new Lenis({
+          duration: 1.2,
+          easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          smoothWheel: true,
+          anchors: { offset: 0 },
+        });
+        (window as any).__lenis = lenis;
 
-    (window as any).__lenis = lenis;
+        let id: number;
+        const raf = (time: number) => {
+          lenis.raf(time);
+          id = requestAnimationFrame(raf);
+        };
+        id = requestAnimationFrame(raf);
 
-    let animationFrameId: number;
+        cleanup = () => {
+          cancelAnimationFrame(id);
+          lenis.destroy();
+          delete (window as any).__lenis;
+        };
+      });
 
-    function raf(time: number) {
-      lenis.raf(time);
-      animationFrameId = requestAnimationFrame(raf);
-    }
-
-    animationFrameId = requestAnimationFrame(raf);
+    const w = window as Window & { requestIdleCallback?: (cb: () => void) => number };
+    if (w.requestIdleCallback) w.requestIdleCallback(() => { start(); });
+    else setTimeout(start, 1500);
 
     return () => {
-      cancelAnimationFrame(animationFrameId);
-      lenis.destroy();
-      delete (window as any).__lenis;
+      cancelled = true;
+      cleanup?.();
     };
   }, []);
 }

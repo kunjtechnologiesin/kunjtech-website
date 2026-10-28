@@ -406,7 +406,7 @@ export const Pricing: React.FC = () => {
               className={`rounded-xl px-2 py-2 text-center transition-colors min-h-[48px] ${selected === p.name ? 'bg-ink text-paper' : 'text-ink'}`}
             >
               <span className="block font-display font-bold text-sm leading-tight">{p.name}</span>
-              <span className={`block font-mono text-[10px] leading-tight mt-0.5 ${selected === p.name ? 'text-paper/70' : 'text-ink-muted'}`}>
+              <span className={`block font-mono text-[10px] leading-tight mt-0.5 ${selected === p.name ? 'text-paper/90' : 'text-ink-muted'}`}>
                 {startPrice(p.price)}
               </span>
             </button>

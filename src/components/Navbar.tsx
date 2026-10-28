@@ -261,12 +261,12 @@ export const Navbar: React.FC<{ activeSectionId?: string }> = ({ activeSectionId
                   className="font-display font-bold text-[clamp(1.25rem,5vw,1.75rem)] uppercase tracking-tight text-paper active:text-vermilion flex items-center justify-between border-b border-paper/10 py-3.5 min-h-[48px]"
                 >
                   <span>{link.name}</span>
-                  <span className="font-mono text-sm text-paper/70 font-normal">0{idx + 1}</span>
+                  <span className="font-mono text-sm text-paper/90 font-normal">0{idx + 1}</span>
                 </motion.a>
               ))}
             </div>
 
-            <div className="pt-4 border-t border-paper/10 mt-auto text-center font-mono text-[11px] text-paper/70 tracking-wider">
+            <div className="pt-4 border-t border-paper/10 mt-auto text-center font-mono text-[11px] text-paper/90 tracking-wider">
               DIRECT FOUNDER CONTACT
             </div>
           </motion.div>

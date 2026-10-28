@@ -195,7 +195,7 @@ export const ScrollPreview: React.FC<ScrollPreviewProps> = ({
               <img
                 ref={imgRef}
                 src={project.previewImage}
-                srcSet={project.previewImage.endsWith('.webp') ? `${project.previewImage.replace(/\.webp$/, '-sm.webp')} 720w, ${project.previewImage} 1080w` : undefined}
+                srcSet={project.previewImage.endsWith('.webp') ? `${project.previewImage.replace(/\.webp$/, '-sm.webp')} 600w, ${project.previewImage} 1080w` : undefined}
                 sizes="140px"
                 alt={project.previewAlt || `${project.name} mobile screenshot`}
                 width={project.previewWidth || 390}
@@ -216,7 +216,7 @@ export const ScrollPreview: React.FC<ScrollPreviewProps> = ({
                 <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center">
                   <Smartphone className="w-3.5 h-3.5 opacity-70" />
                 </div>
-                <span className="font-mono text-[9px] font-medium leading-tight text-paper/70">
+                <span className="font-mono text-[9px] font-medium leading-tight text-paper/90">
                   Preview coming soon
                 </span>
               </div>
@@ -274,7 +274,7 @@ export const ScrollPreview: React.FC<ScrollPreviewProps> = ({
           <img
             ref={imgRef}
             src={project.previewImage}
-            srcSet={project.previewImage.endsWith('.webp') ? `${project.previewImage.replace(/\.webp$/, '-sm.webp')} 720w, ${project.previewImage} 1080w` : undefined}
+            srcSet={project.previewImage.endsWith('.webp') ? `${project.previewImage.replace(/\.webp$/, '-sm.webp')} 600w, ${project.previewImage} 1080w` : undefined}
             sizes="(max-width: 640px) 340px, 380px"
             alt={project.previewAlt || `${project.name} live website screenshot`}
             width={project.previewWidth || 1080}
@@ -287,14 +287,14 @@ export const ScrollPreview: React.FC<ScrollPreviewProps> = ({
             style={
               scrollDistance > 0
                 ? {
-                    width: project.previewCrop === "text" ? '178.57%' : '100%',
-                    maxWidth: project.previewCrop === "text" ? 'none' : '100%',
-                    height: 'auto',
-                    objectPosition: 'top',
-                    transform: `translate3d(0, -${translateY}px, 0)`,
-                    transition: transitionStyle,
-                    willChange: 'transform'
-                  }
+                  width: project.previewCrop === "text" ? '178.57%' : '100%',
+                  maxWidth: project.previewCrop === "text" ? 'none' : '100%',
+                  height: 'auto',
+                  objectPosition: 'top',
+                  transform: `translate3d(0, -${translateY}px, 0)`,
+                  transition: transitionStyle,
+                  willChange: 'transform'
+                }
                 : undefined
             }
           />
@@ -303,7 +303,7 @@ export const ScrollPreview: React.FC<ScrollPreviewProps> = ({
             <div className="w-8 h-8 rounded-full bg-paper/10 flex items-center justify-center">
               <Globe className="w-4 h-4 opacity-70" />
             </div>
-            <span className="font-mono text-xs font-medium tracking-wide text-paper/70">
+            <span className="font-mono text-xs font-medium tracking-wide text-paper/90">
               Preview coming soon
             </span>
           </div>

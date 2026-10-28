@@ -12,17 +12,14 @@
   <link rel="preload" as="image" href="/hero/desktop-v3-sm.webp" media="(max-width: 767px)" fetchpriority="high" />
   <link rel="preload" as="image" href="/hero/desktop-v3.webp" media="(min-width: 768px)" fetchpriority="high" />
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin />
   <link rel="stylesheet" media="print" onload="this.media='all'"
     href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,900&f[]=general-sans@500,600&display=swap" />
-  <link rel="stylesheet" media="print" onload="this.media='all'"
-    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,600&family=JetBrains+Mono:wght@400;500;700&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" />
+
   <noscript>
     <link rel="stylesheet"
       href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,900&f[]=general-sans@500,600&display=swap" />
-    <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,600&family=JetBrains+Mono:wght@400;500;700&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" />
+
   </noscript>
   <!-- Apple Touch Icon & Canonical -->
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -157,10 +154,96 @@
   }
   </script>
 
+  <style>
+    html {
+      background: #F4F0EA
+    }
+
+    body {
+      margin: 0;
+      background: #F4F0EA;
+      color: #111110;
+      font-family: 'General Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6
+    }
+
+    #ssr-shell {
+      min-height: 100svh;
+      padding: 8px 20px 24px;
+      box-sizing: border-box;
+      max-width: 1280px;
+      margin: 0 auto
+    }
+
+    #ssr-shell img {
+      height: 72px;
+      width: auto;
+      display: block;
+      margin-left: -20px
+    }
+
+    #ssr-shell .eb {
+      font: 700 12px/1.4 'JetBrains Mono', ui-monospace, monospace;
+      letter-spacing: .1em;
+      color: #C22F17;
+      margin-top: 44px
+    }
+
+    #ssr-shell h1 {
+      font: 900 clamp(1.85rem, 7.5vw, 2.75rem)/.98 'Cabinet Grotesk', system-ui, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: -.025em;
+      margin: 16px 0 0
+    }
+
+    #ssr-shell h1 em {
+      display: block;
+      font: italic 400 1em/1.1 Fraunces, Georgia, serif;
+      text-transform: lowercase;
+      color: #C22F17;
+      letter-spacing: 0
+    }
+
+    #ssr-shell p {
+      max-width: 340px;
+      color: #3D3A33;
+      margin: 20px 0 0
+    }
+
+    @media(min-width:768px) {
+      #ssr-shell {
+        padding: 28px 32px
+      }
+
+      #ssr-shell img {
+        height: 84px;
+        margin-left: 0
+      }
+
+      #ssr-shell .eb {
+        margin-top: 60px
+      }
+
+      #ssr-shell h1 {
+        font-size: clamp(3rem, 6vw, 4.5rem)
+      }
+
+      #ssr-shell p {
+        max-width: 560px
+      }
+    }
+  </style>
 </head>
 
 <body class="bg-paper text-ink font-sans antialiased selection:bg-vermilion selection:text-paper">
   <div id="root">
+    <div id="ssr-shell">
+      <img src="/logo.webp" alt="Kunj Technologies" width="140" height="100" />
+      <div class="eb">WEBSITE DESIGNER &amp; DEVELOPER IN AKOLA</div>
+      <h1>Your Business Deserves a <em>professional website.</em></h1>
+      <p>Kunj Technologies is a website designer and developer for local businesses in Akola and across Maharashtra,
+        creating business websites, online catalogues and mobile apps.</p>
+    </div>
     <div style="display:none" aria-hidden="true" id="seo-fallback">
       <h1>Website Designer &amp; App Developer in Akola, Maharashtra</h1>
       <p>Kunj Technologies, founded by Darshan Jogi, builds fast, mobile-first business websites and apps for local

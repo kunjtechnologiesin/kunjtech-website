@@ -193,11 +193,11 @@ export const Hero: React.FC = () => {
                 <div className="w-full aspect-[16/10] overflow-hidden relative bg-black/10 [container-type:size]">
                   <img
                     src="/hero/desktop-v3-sm.webp"
-                    srcSet="/hero/desktop-v3-sm.webp 680w, /hero/desktop-v3.webp 1080w"
+                    srcSet="/hero/desktop-v3-sm.webp 600w, /hero/desktop-v3.webp 1080w"
                     sizes="(max-width: 768px) 340px, 530px"
                     alt={HERO_DESKTOP_ALT}
-                    width={680}
-                    height={1360}
+                    width={600}
+                    height={1200}
                     fetchPriority="high"
                     decoding="async"
                     className="w-full h-auto block select-none pointer-events-none animate-hero-scroll-desktop"
@@ -366,7 +366,7 @@ export const Hero: React.FC = () => {
                       <div className="w-full aspect-[16/10] overflow-hidden relative bg-black/10 [container-type:size]">
                         <img
                           src={HERO_DESKTOP_IMAGE}
-                          srcSet="/hero/desktop-v3-sm.webp 680w, /hero/desktop-v3.webp 1080w"
+                          srcSet="/hero/desktop-v3-sm.webp 600w, /hero/desktop-v3.webp 1080w"
                           sizes="(max-width: 768px) 340px, 530px"
                           alt={HERO_DESKTOP_ALT}
                           width={1080}
