@@ -203,7 +203,8 @@ body.menu-open {
 
   44%,
   56% {
-    transform: translate3d(0, var(--scroll-dist-desktop, -460px), 0);
+    transform: translate3d(0, var(--scroll-dist-desktop, -68.75%), 0);
+    transform: translate3d(0, calc(-100% + 100cqh), 0);
   }
 
   94%,
@@ -221,7 +222,8 @@ body.menu-open {
 
   44%,
   56% {
-    transform: translate3d(0, var(--scroll-dist-mobile, -380px), 0);
+    transform: translate3d(0, var(--scroll-dist-mobile, -62.36%), 0);
+    transform: translate3d(0, calc(-100% + 100cqh), 0);
   }
 
   94%,

@@ -1,15 +1,11 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React from 'react';
 import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } from 'framer-motion';
 import { HERO_DATA } from '../data/siteData';
 import {
   HERO_DESKTOP_IMAGE,
   HERO_DESKTOP_ALT,
-  HERO_DESKTOP_WIDTH,
-  HERO_DESKTOP_HEIGHT,
   HERO_MOBILE_IMAGE,
   HERO_MOBILE_ALT,
-  HERO_MOBILE_WIDTH,
-  HERO_MOBILE_HEIGHT,
   HERO_DESKTOP_PROJECT_ID,
   HERO_MOBILE_PROJECT_ID,
 } from '../data/config';
@@ -91,88 +87,7 @@ export const Hero: React.FC = () => {
     ? new URL(mobileProject.liveUrl).hostname
     : 'hair-salon-web-ruddy.vercel.app';
 
-  // Dynamic measurement of scroll travel distances via ResizeObserver
-  // Separate refs for mobile (< md) and desktop (md+) to prevent ref collision
-  const mDesktopFrameRef = useRef<HTMLDivElement>(null);
-  const mDesktopImgRef = useRef<HTMLImageElement>(null);
-  const mPhoneFrameRef = useRef<HTMLDivElement>(null);
-  const mPhoneImgRef = useRef<HTMLImageElement>(null);
 
-  const dDesktopFrameRef = useRef<HTMLDivElement>(null);
-  const dDesktopImgRef = useRef<HTMLImageElement>(null);
-  const dPhoneFrameRef = useRef<HTMLDivElement>(null);
-  const dPhoneImgRef = useRef<HTMLImageElement>(null);
-
-  // Exact initial fallbacks calculated from aspect ratios:
-  // Desktop: 1440x2880 (2:1) in 16:10 frame -> factor 1.375
-  // Mobile: 390x2072 (5.31:1) in 9:18 frame -> factor 3.31
-  const [mDesktopScrollDist, setMDesktopScrollDist] = useState(460);
-  const [mPhoneScrollDist, setMPhoneScrollDist] = useState(380);
-  const [dDesktopScrollDist, setDDesktopScrollDist] = useState(620);
-  const [dPhoneScrollDist, setDPhoneScrollDist] = useState(560);
-
-  const updateMeasurements = useCallback(() => {
-    // 1. Mobile Hero - Desktop mockup
-    if (mDesktopFrameRef.current && mDesktopImgRef.current) {
-      const frameH = mDesktopFrameRef.current.clientHeight;
-      const imgH = mDesktopImgRef.current.clientHeight;
-      if (frameH > 0 && imgH > frameH) {
-        setMDesktopScrollDist(Math.round(imgH - frameH));
-      }
-    }
-    // 2. Mobile Hero - Phone mockup
-    if (mPhoneFrameRef.current && mPhoneImgRef.current) {
-      const frameH = mPhoneFrameRef.current.clientHeight;
-      const imgH = mPhoneImgRef.current.clientHeight;
-      if (frameH > 0 && imgH > frameH) {
-        setMPhoneScrollDist(Math.round(imgH - frameH));
-      }
-    }
-    // 3. Desktop Hero - Desktop mockup
-    if (dDesktopFrameRef.current && dDesktopImgRef.current) {
-      const frameH = dDesktopFrameRef.current.clientHeight;
-      const imgH = dDesktopImgRef.current.clientHeight;
-      if (frameH > 0 && imgH > frameH) {
-        setDDesktopScrollDist(Math.round(imgH - frameH));
-      }
-    }
-    // 4. Desktop Hero - Phone mockup
-    if (dPhoneFrameRef.current && dPhoneImgRef.current) {
-      const frameH = dPhoneFrameRef.current.clientHeight;
-      const imgH = dPhoneImgRef.current.clientHeight;
-      if (frameH > 0 && imgH > frameH) {
-        setDPhoneScrollDist(Math.round(imgH - frameH));
-      }
-    }
-  }, []);
-
-  useEffect(() => {
-    const ro = new ResizeObserver(() => {
-      updateMeasurements();
-    });
-
-    const targets = [
-      mDesktopFrameRef.current,
-      mDesktopImgRef.current,
-      mPhoneFrameRef.current,
-      mPhoneImgRef.current,
-      dDesktopFrameRef.current,
-      dDesktopImgRef.current,
-      dPhoneFrameRef.current,
-      dPhoneImgRef.current,
-    ];
-
-    targets.forEach((el) => {
-      if (el) ro.observe(el);
-    });
-
-    window.addEventListener('resize', updateMeasurements, { passive: true });
-
-    return () => {
-      ro.disconnect();
-      window.removeEventListener('resize', updateMeasurements);
-    };
-  }, [updateMeasurements]);
 
   return (
     <>
@@ -250,13 +165,7 @@ export const Hero: React.FC = () => {
 
 
           {/* ── Mobile Visual Composition ── */}
-          <div
-            className="relative mt-6 mb-3 w-full max-w-[340px] mx-auto hero-preview-pause"
-            style={{
-              '--scroll-dist-desktop': `-${mDesktopScrollDist}px`,
-              '--scroll-dist-mobile': `-${mPhoneScrollDist}px`,
-            } as React.CSSProperties}
-          >
+          <div className="relative mt-6 mb-3 w-full max-w-[340px] mx-auto hero-preview-pause">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -281,16 +190,16 @@ export const Hero: React.FC = () => {
                 </div>
 
                 {/* 16:10 Viewport */}
-                <div ref={mDesktopFrameRef} className="w-full aspect-[16/10] overflow-hidden relative bg-black/10">
+                <div className="w-full aspect-[16/10] overflow-hidden relative bg-black/10 [container-type:size]">
                   <img
-                    ref={mDesktopImgRef}
-                    src={HERO_DESKTOP_IMAGE}
+                    src="/hero/desktop-v3-sm.webp"
+                    srcSet="/hero/desktop-v3-sm.webp 680w, /hero/desktop-v3.webp 1080w"
+                    sizes="(max-width: 768px) 340px, 530px"
                     alt={HERO_DESKTOP_ALT}
-                    width={HERO_DESKTOP_WIDTH}
-                    height={HERO_DESKTOP_HEIGHT}
+                    width={680}
+                    height={1360}
                     fetchPriority="high"
                     decoding="async"
-                    onLoad={updateMeasurements}
                     className="w-full h-auto block select-none pointer-events-none animate-hero-scroll-desktop"
                   />
                 </div>
@@ -299,16 +208,16 @@ export const Hero: React.FC = () => {
               {/* Front Layer: Phone Frame 38% width overlapping bottom-right corner */}
               <div className="absolute -bottom-4 right-1 w-[38%] max-w-[130px] bg-slate-950 text-paper border-2 border-slate-700 rounded-2xl p-1 shadow-2xl z-20">
                 <div className="w-8 h-1 bg-slate-800 rounded-full mx-auto mb-1" />
-                <div ref={mPhoneFrameRef} className="w-full aspect-[9/18] rounded-xl overflow-hidden relative bg-slate-900">
+                <div className="w-full aspect-[9/18] rounded-xl overflow-hidden relative bg-slate-900 [container-type:size]">
                   <img
-                    ref={mPhoneImgRef}
-                    src={HERO_MOBILE_IMAGE}
+                    src="/hero/mobile-v2-sm.webp"
+                    srcSet="/hero/mobile-v2-sm.webp 240w, /hero/mobile-v2.webp 380w"
+                    sizes="130px"
                     alt={HERO_MOBILE_ALT}
-                    width={HERO_MOBILE_WIDTH}
-                    height={HERO_MOBILE_HEIGHT}
+                    width={240}
+                    height={1275}
                     loading="lazy"
                     decoding="async"
-                    onLoad={updateMeasurements}
                     className="w-full h-auto block select-none pointer-events-none animate-hero-scroll-mobile"
                   />
                 </div>
@@ -425,13 +334,7 @@ export const Hero: React.FC = () => {
 
               {/* Right Hero Visual: Real Live Screenshots */}
               <div className="lg:col-span-5 relative mt-6 lg:mt-0">
-                <div
-                  className="relative w-full max-w-[530px] xl:max-w-[570px] mx-auto lg:mr-auto lg:ml-0 hero-preview-pause"
-                  style={{
-                    '--scroll-dist-desktop': `-${dDesktopScrollDist}px`,
-                    '--scroll-dist-mobile': `-${dPhoneScrollDist}px`,
-                  } as React.CSSProperties}
-                >
+                <div className="relative w-full max-w-[530px] xl:max-w-[570px] mx-auto lg:mr-auto lg:ml-0 hero-preview-pause">
                   <motion.div
                     style={{
                       x: desktopX,
@@ -460,19 +363,16 @@ export const Hero: React.FC = () => {
                       </div>
 
                       {/* 16:10 Viewport with Continuous Smooth Scroll */}
-                      <div
-                        ref={dDesktopFrameRef}
-                        className="w-full aspect-[16/10] overflow-hidden relative bg-black/10"
-                      >
+                      <div className="w-full aspect-[16/10] overflow-hidden relative bg-black/10 [container-type:size]">
                         <img
-                          ref={dDesktopImgRef}
                           src={HERO_DESKTOP_IMAGE}
+                          srcSet="/hero/desktop-v3-sm.webp 680w, /hero/desktop-v3.webp 1080w"
+                          sizes="(max-width: 768px) 340px, 530px"
                           alt={HERO_DESKTOP_ALT}
-                          width={HERO_DESKTOP_WIDTH}
-                          height={HERO_DESKTOP_HEIGHT}
+                          width={1080}
+                          height={2160}
                           fetchPriority="high"
                           decoding="async"
-                          onLoad={updateMeasurements}
                           className="w-full h-auto block select-none pointer-events-none animate-hero-scroll-desktop"
                         />
                       </div>
@@ -490,9 +390,7 @@ export const Hero: React.FC = () => {
                       <div className="w-10 h-1.5 bg-slate-800 rounded-full mx-auto mb-1 flex-shrink-0" />
 
                       {/* Screen Viewport with Continuous Smooth Scroll (11s offset) */}
-                      <div
-                        className="w-full aspect-[9/18] rounded-[14px] overflow-hidden relative bg-slate-900 flex flex-col"
-                      >
+                      <div className="w-full aspect-[9/18] rounded-[14px] overflow-hidden relative bg-slate-900 flex flex-col [container-type:size]">
                         {/* Status bar */}
                         <div className="h-5 bg-black/80 px-2 flex items-center justify-between text-[8px] font-mono text-paper-dark border-b border-white/10 select-none z-10 flex-shrink-0">
                           <span className="truncate max-w-[80px] opacity-75">{mobileHostname}</span>
@@ -500,16 +398,16 @@ export const Hero: React.FC = () => {
                         </div>
 
                         {/* Scrolling Image */}
-                        <div ref={dPhoneFrameRef} className="flex-1 overflow-hidden relative">
+                        <div className="flex-1 overflow-hidden relative [container-type:size]">
                           <img
-                            ref={dPhoneImgRef}
                             src={HERO_MOBILE_IMAGE}
+                            srcSet="/hero/mobile-v2-sm.webp 240w, /hero/mobile-v2.webp 380w"
+                            sizes="190px"
                             alt={HERO_MOBILE_ALT}
-                            width={HERO_MOBILE_WIDTH}
-                            height={HERO_MOBILE_HEIGHT}
+                            width={380}
+                            height={2019}
                             loading="lazy"
                             decoding="async"
-                            onLoad={updateMeasurements}
                             className="w-full h-auto block select-none pointer-events-none animate-hero-scroll-mobile"
                           />
                         </div>

@@ -76,7 +76,6 @@ export const Portfolio: React.FC = () => {
                 {/* Mockup / Image Header */}
                 <ScrollPreview
                   project={project}
-                  isFirst={idx === 0}
                   variant="browser"
                 />
 

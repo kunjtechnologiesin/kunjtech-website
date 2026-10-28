@@ -259,8 +259,11 @@ export const Pricing: React.FC = () => {
 
   // Whenever the selected care plan changes (tab tap, card tap or swipe), centre its card
   useEffect(() => {
-    scrollToCare(selectedCare, !careFirstRun.current);
-    careFirstRun.current = false;
+    if (careFirstRun.current) {
+      careFirstRun.current = false;
+      return;
+    }
+    scrollToCare(selectedCare, true);
   }, [selectedCare]);
 
   const plans = PLANS[siteType];
@@ -276,9 +279,19 @@ export const Pricing: React.FC = () => {
     });
   };
 
-  // Start on the recommended plan
+  // Start on the recommended plan (deferred to avoid layout reflow during initial page render)
   useEffect(() => {
-    scrollToPlan('Standard', false);
+    if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+      const handle = (window as any).requestIdleCallback(() => {
+        scrollToPlan('Standard', false);
+      }, { timeout: 1000 });
+      return () => (window as any).cancelIdleCallback(handle);
+    } else {
+      const timer = setTimeout(() => {
+        scrollToPlan('Standard', false);
+      }, 300);
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   // Mobile only: when the swipe settles, highlight the plan that is in the middle

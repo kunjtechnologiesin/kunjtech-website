@@ -4,13 +4,11 @@ import { Smartphone, Globe } from 'lucide-react';
 
 interface ScrollPreviewProps {
   project: ProjectItem;
-  isFirst?: boolean;
   variant?: "browser" | "phone";
 }
 
 export const ScrollPreview: React.FC<ScrollPreviewProps> = ({
   project,
-  isFirst = false,
   variant = "browser"
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -197,12 +195,14 @@ export const ScrollPreview: React.FC<ScrollPreviewProps> = ({
               <img
                 ref={imgRef}
                 src={project.previewImage}
+                srcSet={project.previewImage.endsWith('.webp') ? `${project.previewImage.replace(/\.webp$/, '-sm.webp')} 720w, ${project.previewImage} 1080w` : undefined}
+                sizes="140px"
                 alt={project.previewAlt || `${project.name} mobile screenshot`}
                 width={project.previewWidth || 390}
                 height={project.previewHeight || 844}
-                loading={isFirst ? "eager" : "lazy"}
+                loading="lazy"
                 decoding="async"
-                fetchPriority={isFirst ? "high" : "low"}
+                fetchPriority="low"
                 onLoad={updateMeasurements}
                 className="w-full h-auto block select-none pointer-events-none"
                 style={{
@@ -274,12 +274,14 @@ export const ScrollPreview: React.FC<ScrollPreviewProps> = ({
           <img
             ref={imgRef}
             src={project.previewImage}
+            srcSet={project.previewImage.endsWith('.webp') ? `${project.previewImage.replace(/\.webp$/, '-sm.webp')} 720w, ${project.previewImage} 1080w` : undefined}
+            sizes="(max-width: 640px) 340px, 380px"
             alt={project.previewAlt || `${project.name} live website screenshot`}
-            width={project.previewWidth || 1440}
-            height={project.previewHeight || 900}
-            loading={isFirst ? "eager" : "lazy"}
+            width={project.previewWidth || 1080}
+            height={project.previewHeight || 675}
+            loading="lazy"
             decoding="async"
-            fetchPriority={isFirst ? "high" : "low"}
+            fetchPriority="low"
             onLoad={updateMeasurements}
             className={`w-full ${scrollDistance > 0 ? 'h-auto' : 'h-full object-cover object-top'} block select-none pointer-events-none origin-top-left group-hover:scale-105 transition-transform duration-500`}
             style={

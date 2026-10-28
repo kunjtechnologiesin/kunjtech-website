@@ -7,18 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#F4F0EA" />
 
-  <!-- Preload Critical Logo & Font Preconnect -->
+  <!-- Preload Critical Logo & Hero LCP Image -->
   <link rel="preload" as="image" href="/logo.webp" fetchpriority="high" />
+  <link rel="preload" as="image" href="/hero/desktop-v3-sm.webp" media="(max-width: 767px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="/hero/desktop-v3.webp" media="(min-width: 768px)" fetchpriority="high" />
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" media="print" onload="this.media='all'"
-    href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,700,900&f[]=general-sans@500,600,700&display=swap" />
+    href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,900&f[]=general-sans@500,600&display=swap" />
   <link rel="stylesheet" media="print" onload="this.media='all'"
     href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,600&family=JetBrains+Mono:wght@400;500;700&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" />
   <noscript>
     <link rel="stylesheet"
-      href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,700,900&f[]=general-sans@500,600,700&display=swap" />
+      href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,900&f[]=general-sans@500,600&display=swap" />
     <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,600&family=JetBrains+Mono:wght@400;500;700&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" />
   </noscript>
