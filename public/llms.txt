@@ -1,29 +1,23 @@
 # Kunj Technologies
 
-> Website design and app development for local businesses in Akola, Maharashtra, India. Founded by Darshan Jogi. Websites from ₹9,999, live in 1–3 weeks.
+> Kunj Technologies is a website design and app development studio in Akola, Maharashtra, India, founded by Darshan Jogi. It builds fast, mobile-first websites and business apps for local businesses. Websites start from ₹9,999 and most go live in 1–3 weeks. Domain, hosting and support are included for the first year.
 
-## Services
-- Basic business websites
-- Quote and enquiry websites
-- Online ordering websites
-- Business management apps
-
-## Pricing (INR, one-time)
-- Static website: Basic ₹9,999 (1–3 pages), Standard ₹14,999 (4–7 pages), Premium from ₹19,999 (8+ pages)
-- Dynamic website with admin panel: Basic ₹19,999, Standard ₹25,999, Premium from ₹39,999
-- Domain, hosting and 1 year of support included with every plan
-- Optional care plans: ₹499, ₹999, ₹1,999 per month (yearly billing saves 2 months)
+## Main pages
+- [Home](https://kunjtechnologies.in/): Overview of services, portfolio, pricing and FAQ on a single page
+- [Our work](https://kunjtechnologies.in/#work): Live websites and apps built for local businesses
+- [Services](https://kunjtechnologies.in/#services): Basic business sites, quote and enquiry sites, online ordering sites, business management apps
+- [Pricing](https://kunjtechnologies.in/#pricing): Static plans from ₹9,999, dynamic plans with an admin panel from ₹19,999
+- [FAQ](https://kunjtechnologies.in/#faq): Cost, timelines, mobile support, domain and hosting
+- [Contact](https://kunjtechnologies.in/#contact): Enquiry form, WhatsApp and phone
 
 ## Selected work
-- Hair City Salon & Academy (Akola): https://hair-salon-web-ruddy.vercel.app/
-- Derma Care Skin, Hair & Laser Clinic (Akola): https://derma-web-gules.vercel.app/
-- Bakery Ordering & Admin System: https://baker-web-app-zeta.vercel.app/
-- Kalyan Stone Crushing Industries: https://stone-crusher-web-gamma.vercel.app/
-- Heritage Lawns & Banquets: https://wedding-venue-web.vercel.app/
+- [Hair City Salon & Academy](https://hair-salon-web-ruddy.vercel.app/): Salon and academy website, Akola
+- [Derma Care Skin, Hair & Laser Clinic](https://derma-web-gules.vercel.app/): Clinic website with online booking, Akola
+- [Bakery Ordering & Admin System](https://baker-web-app-zeta.vercel.app/): Online ordering with admin panel
+- [Kalyan Stone Crushing Industries](https://stone-crusher-web-gamma.vercel.app/): Quote and enquiry website
+- [Heritage Lawns & Banquets](https://wedding-venue-web.vercel.app/): Wedding venue website
 
 ## Contact
-- Website: https://kunjtechnologies.in/
-- WhatsApp / phone: +91 95118 17720
-- Email: kunjtechnologies.in@gmail.com
-- Instagram: https://www.instagram.com/kunjtechnologies.in
-- Location: Akola, Maharashtra, India
+- [WhatsApp](https://wa.me/919511817720): Chat with the founder
+- [Email](mailto:kunjtechnologies.in@gmail.com): kunjtechnologies.in@gmail.com
+- [Instagram](https://www.instagram.com/kunjtechnologies.in): Updates and recent work

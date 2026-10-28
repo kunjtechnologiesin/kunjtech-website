@@ -1,0 +1,16 @@
+{
+  "specVersion": "1.0",
+  "entries": [
+    {
+      "identifier": "urn:air:kunjtechnologies.in:docs:llms-txt",
+      "displayName": "Kunj Technologies: site summary for AI agents (/llms.txt)",
+      "type": "text/markdown",
+      "url": "https://kunjtechnologies.in/llms.txt",
+      "representativeQueries": [
+        "Who builds business websites in Akola and what do they cost?",
+        "What website plans and prices does Kunj Technologies offer?",
+        "How long does it take Kunj Technologies to build a website?"
+      ]
+    }
+  ]
+}

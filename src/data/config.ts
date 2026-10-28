@@ -23,9 +23,9 @@ export const BRAND_CONFIG = {
   email: "kunjtechnologies.in@gmail.com",
 
   // Official Brand Logos
-  logo: "/logo.png",
+  logo: "/logo.webp",
   logoMark: "/logo-mark.png",
-  logoWhite: "/logo-white.png",
+  logoWhite: "/logo-white.webp",
 
   socialLinks: [
     {
