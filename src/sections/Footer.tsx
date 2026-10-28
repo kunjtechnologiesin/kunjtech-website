@@ -40,9 +40,9 @@ export const Footer: React.FC = () => {
 
               {/* Navigation Links Column */}
               <div>
-                <h4 className="font-mono text-xs uppercase text-vermilion-light font-bold tracking-wider mb-3">
+                <h3 className="font-mono text-xs uppercase text-vermilion-light font-bold tracking-wider mb-3">
                   [ NAVIGATION ]
-                </h4>
+                </h3>
                 <ul className="space-y-1.5 text-xs sm:text-sm">
                   {NAV_LINKS.map((link) => (
                     <li key={link.name}>
@@ -56,9 +56,9 @@ export const Footer: React.FC = () => {
 
               {/* Services 1-Column List (All 4 Items) */}
               <div>
-                <h4 className="font-mono text-xs uppercase text-vermilion-light font-bold tracking-wider mb-3">
+                <h3 className="font-mono text-xs uppercase text-vermilion-light font-bold tracking-wider mb-3">
                   [ SERVICES ]
-                </h4>
+                </h3>
                 <ul className="space-y-2 text-xs text-paper-dark">
                   {MERGED_SERVICES_DATA.map((service) => (
                     <li key={service.id}>
@@ -74,9 +74,9 @@ export const Footer: React.FC = () => {
 
             {/* Contact & Social Links */}
             <div className="lg:col-span-3 space-y-3">
-              <h4 className="font-mono text-xs uppercase text-vermilion-light font-bold tracking-wider mb-3">
+              <h3 className="font-mono text-xs uppercase text-vermilion-light font-bold tracking-wider mb-3">
                 [ CONNECT ]
-              </h4>
+              </h3>
               <div className="space-y-2 text-xs sm:text-sm">
                 <a
                   href={whatsappUrl}
@@ -128,7 +128,7 @@ export const Footer: React.FC = () => {
           <div className="font-display font-black text-[clamp(2.75rem,14vw,8.5rem)] leading-none uppercase tracking-tighter text-paper/10 flex justify-center hover:text-vermilion/30 transition-colors">
             KUNJ
           </div>
-          <div className="font-mono font-bold text-[clamp(0.75rem,3.2vw,1.75rem)] uppercase tracking-[0.28em] sm:tracking-[0.38em] text-paper/20 mt-1 sm:mt-2 text-center">
+          <div className="font-mono font-bold text-[clamp(0.75rem,3.2vw,1.75rem)] uppercase tracking-[0.28em] sm:tracking-[0.38em] text-paper/60 mt-1 sm:mt-2 text-center">
             TECHNOLOGIES
           </div>
         </div>

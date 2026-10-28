@@ -133,7 +133,7 @@ export const Portfolio: React.FC = () => {
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full min-h-[44px] flex items-center justify-center gap-2 bg-vermilion hover:bg-vermilion-dark text-paper font-sans font-bold text-xs rounded-badge border border-paper/30 shadow-sm transition-all"
+                    className="w-full min-h-[44px] flex items-center justify-center gap-2 bg-vermilion-text hover:bg-vermilion-dark text-paper font-sans font-bold text-xs rounded-badge border border-paper/30 shadow-sm transition-all"
                   >
                     <span>Request a site like this</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
@@ -262,7 +262,7 @@ export const Portfolio: React.FC = () => {
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full min-h-[44px] flex items-center justify-center gap-2 bg-vermilion hover:bg-vermilion-dark text-paper font-bold text-sm rounded-badge border border-paper transition-all"
+                  className="w-full min-h-[44px] flex items-center justify-center gap-2 bg-vermilion-text hover:bg-vermilion-dark text-paper font-bold text-sm rounded-badge border border-paper transition-all"
                 >
                   <span>Discuss This Project on WhatsApp</span>
                   <ArrowUpRight className="w-4 h-4" />

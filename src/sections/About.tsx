@@ -49,9 +49,9 @@ export const About: React.FC = () => {
           {/* 3 Short Principles as Simple Rows */}
           <Reveal delay={0.3}>
             <div className="bg-card border border-ink/15 rounded-lg p-5 sm:p-6 shadow-mobile-soft space-y-3">
-              <h4 className="font-mono text-xs uppercase font-bold text-vermilion-text tracking-wider mb-2">
+              <h3 className="font-mono text-xs uppercase font-bold text-vermilion-text tracking-wider mb-2">
                 [ WORKING PRINCIPLES ]
-              </h4>
+              </h3>
 
               <div className="space-y-2.5">
                 {[

@@ -14,3 +14,5 @@ User-agent: Google-Extended
 Allow: /
 
 Sitemap: https://kunjtechnologies.in/sitemap.xml
+
+Agentmap: https://kunjtechnologies.in/.well-known/ai-catalog.json
