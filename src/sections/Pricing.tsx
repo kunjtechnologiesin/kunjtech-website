@@ -31,16 +31,16 @@ const PLANS: Record<SiteType, Plan[]> = {
     {
       name: 'Basic',
       price: '₹9,999',
-      priceNote: 'fixed price · one-time',
-      idealFor: 'Small shops and service providers who need a clean web presence.',
+      priceNote: 'Fixed price, one-time',
+      idealFor: 'For small shops and service providers who need a clean web presence.',
       pages: '1–3 pages',
       seo: 'None',
       features: [
-        '1–3 custom designed pages',
+        '1–3 custom-designed pages',
         'Mobile-first responsive layout',
         'One-tap Call & WhatsApp buttons',
         'Google Maps pin & location setup',
-        'Photo gallery 1-3',
+        'Photo gallery (up to 3 images)',
       ],
       excluded: [
 
@@ -53,12 +53,13 @@ const PLANS: Record<SiteType, Plan[]> = {
     {
       name: 'Standard',
       price: '₹14,999',
-      priceNote: 'fixed price · one-time',
-      idealFor: 'Growing businesses with products, services and a photo gallery.',
+      priceNote: 'Fixed price, one-time',
+      idealFor: 'For growing businesses with products or services and a photo gallery.',
       pages: '4–7 pages',
       seo: 'Basic',
       recommended: true,
       features: [
+        'Everything in Basic',
         '4–7 custom designed pages',
         'Product / service catalogue',
         'Photo gallery',
@@ -72,11 +73,12 @@ const PLANS: Record<SiteType, Plan[]> = {
     {
       name: 'Premium',
       price: 'From ₹19,999',
-      priceNote: 'final quote after discussion',
-      idealFor: 'Established businesses wanting a full-featured digital presence.',
+      priceNote: 'Final quote after discussion',
+      idealFor: 'For established businesses that want a full-featured digital presence.',
       pages: '8+ pages',
       seo: 'Advanced',
       features: [
+        'Everything in Standard',
         '8+ pages, fully custom design',
         'Interactive tools (calculators, comparisons)',
         'Multi-location / branch listings',
@@ -91,8 +93,8 @@ const PLANS: Record<SiteType, Plan[]> = {
     {
       name: 'Basic',
       price: '₹19,999',
-      priceNote: 'fixed price · one-time',
-      idealFor: 'Businesses that want to update their own content without a developer.',
+      priceNote: 'Fixed price, one-time',
+      idealFor: 'For businesses that want to update their own content without a developer.',
       pages: '1–3 pages',
       seo: 'None',
       features: [
@@ -108,12 +110,13 @@ const PLANS: Record<SiteType, Plan[]> = {
     {
       name: 'Standard',
       price: '₹25,999',
-      priceNote: 'fixed price · one-time',
-      idealFor: 'Businesses taking bookings, enquiries or managing a catalogue online.',
+      priceNote: 'Fixed price, one-time',
+      idealFor: 'For businesses taking bookings or enquiries, or managing a catalogue online.',
       pages: '4–7 pages',
       seo: 'Basic',
       recommended: true,
       features: [
+        'Everything in Basic',
         '4–7 pages with a full admin dashboard',
         'Catalogue / listings you can add and edit',
         'Online booking or enquiry management',
@@ -126,11 +129,12 @@ const PLANS: Record<SiteType, Plan[]> = {
     {
       name: 'Premium',
       price: 'From ₹39,999',
-      priceNote: 'final quote after discussion',
-      idealFor: 'Online stores, ordering systems and custom business apps.',
+      priceNote: 'Final quote after discussion',
+      idealFor: 'For online stores, ordering systems and custom business apps.',
       pages: '8+ pages',
       seo: 'Advanced',
       features: [
+        'Everything in Standard',
         'Online ordering or e-commerce with payments',
         'Customer accounts & order tracking',
         'Admin dashboard with reports',
@@ -355,7 +359,7 @@ export const Pricing: React.FC = () => {
               </div>
 
               <div className="inline-flex items-center gap-1.5 rounded-full border border-ink/10 bg-card px-3 py-1.5 font-mono text-[11px] text-ink shadow-sm">
-                <span className="font-bold text-ink-muted">1-yr included:</span>
+                <span className="font-bold text-ink-muted">Included for 1 year:</span>
                 <span className="flex items-center gap-1 font-bold text-vermilion-text">
                   <Check className="w-3.5 h-3.5 text-vermilion-text" strokeWidth={2.5} /> Domain, Hosting, Support
                 </span>
@@ -367,8 +371,8 @@ export const Pricing: React.FC = () => {
         {/* Subtitle explaining the current choice */}
         <p className="font-sans text-xs sm:text-sm text-ink-muted text-center md:text-left mb-3">
           {siteType === 'static'
-            ? 'Fast, simple sites. You ask me whenever you want a change.'
-            : 'Admin panel + database. Update content, take bookings.'}
+            ? 'Fast, simple sites. Need a change later? Just ask me.'
+            : 'Admin panel and database. Update content yourself and take bookings.'}
         </p>
 
         {/* Mobile plan switcher: shows all 3 plans at a glance, tap to jump */}

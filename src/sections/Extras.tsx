@@ -14,7 +14,7 @@ export const TESTIMONIALS: { quote: string; name: string; business: string }[] =
 export const INTRO_VIDEO_SRC = '';
 
 // Your Google Business / Google reviews link. Empty = hidden.
-export const GOOGLE_REVIEW_LINK = '';
+export const GOOGLE_REVIEW_LINK = 'https://g.page/r/CeTyvH9SNhB4EBM/review';
 
 // Confirm these match what you really offer
 export const PRICE_TEXT = 'From ₹9,999';

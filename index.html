@@ -52,31 +52,124 @@
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
+    "@id": "https://kunjtechnologies.in/#business",
     "name": "Kunj Technologies",
     "url": "https://kunjtechnologies.in/",
+    "logo": "https://kunjtechnologies.in/logo.png",
     "image": "https://kunjtechnologies.in/og-image.png",
     "telephone": "+919511817720",
     "email": "kunjtechnologies.in@gmail.com",
-    "description": "Website design, web development and mobile app development for local businesses in Akola, Maharashtra.",
+    "description": "Website design, web development and mobile app development for local businesses in Akola, Maharashtra. Websites from ₹9,999, live in 1–3 weeks.",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Akola",
       "addressRegion": "Maharashtra",
       "addressCountry": "IN"
     },
-    "founder": { "@type": "Person", "name": "Darshan Jogi" },
+    "geo": { "@type": "GeoCoordinates", "latitude": 20.7002, "longitude": 77.0082 },
+    "founder": { "@type": "Person", "name": "Darshan Jogi", "jobTitle": "Developer & Studio Owner" },
+    "sameAs": [
+    "https://www.instagram.com/kunjtechnologies.in"
+    "https://www.google.com/search?kgmid=%2Fg%2F11z_wcssqn&hl=en-IN&q=Kunj%20Technologies&shem=epsd1%2Cesd2e%2Cltae%2Crimspwouoe%2Csdpie&shndl=30&source=sh%2Fx%2Floc%2Fosrp%2Fm5%2F1&kgs=598ae5859fba21cd"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+919511817720",
+      "contactType": "customer support",
+      "availableLanguage": ["English", "Hindi", "Marathi"]
+    },
     "areaServed": [
       { "@type": "City", "name": "Akola" },
-      { "@type": "AdministrativeArea", "name": "Maharashtra" }
+      { "@type": "AdministrativeArea", "name": "Maharashtra" },
+      { "@type": "Country", "name": "India" }
     ],
-    "knowsAbout": ["Website design", "Website development", "Business website design", "Mobile app development", "Local business websites"],
-    "priceRange": "From ₹9,999"
+    "knowsAbout": ["Website design", "Website development", "Business website design", "Mobile app development", "Local business websites", "Online ordering websites", "Business management apps"],
+    "priceRange": "₹9,999 – ₹39,999+",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Website plans",
+      "itemListElement": [
+        { "@type": "Offer", "name": "Static Website – Basic (1–3 pages)", "price": "9999", "priceCurrency": "INR" },
+        { "@type": "Offer", "name": "Static Website – Standard (4–7 pages)", "price": "14999", "priceCurrency": "INR" },
+        { "@type": "Offer", "name": "Static Website – Premium (8+ pages, from)", "price": "19999", "priceCurrency": "INR" },
+        { "@type": "Offer", "name": "Dynamic Website – Basic (with admin panel)", "price": "19999", "priceCurrency": "INR" },
+        { "@type": "Offer", "name": "Dynamic Website – Standard", "price": "25999", "priceCurrency": "INR" },
+        { "@type": "Offer", "name": "Dynamic Website – Premium (from)", "price": "39999", "priceCurrency": "INR" }
+      ]
+    }
   }
   </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much does a website cost in Akola?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Static websites from Kunj Technologies start from ₹9,999 (Basic), ₹14,999 (Standard) and from ₹19,999 (Premium). Dynamic websites with an admin panel start from ₹19,999 (Basic), ₹25,999 (Standard) and from ₹39,999 (Premium). Domain, hosting and support are included for the first year." }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to build a website?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Most business websites go live in 1–3 weeks from the first call, depending on the pages and features you need and how quickly you send your content." }
+      },
+      {
+        "@type": "Question",
+        "name": "Will my website work on mobile?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every website is built mobile-first and works on phones, tablets and desktops." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you redesign my existing website?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Kunj Technologies can rebuild your old website from scratch with a modern design and faster loading." }
+      },
+      {
+        "@type": "Question",
+          "name": "How do customers contact me through the website?",
+        "acceptedAnswer": { "@type": "Answer", "text": "We add one-tap WhatsApp, phone call and enquiry form buttons so customers reach you directly." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you provide domain and hosting?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Domain, hosting and support are included for the first year with every plan. After that, domain renewal is about ₹600–₹1,500 a year, and hosting renewal depends on whether your site is static or dynamic." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you work with businesses outside Akola?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Kunj Technologies is based in Akola, Maharashtra, and works with businesses across India through WhatsApp, calls and video meetings." }
+      },
+      {
+        "@type": "Question",
+        "name": "Who builds the website?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Darshan Jogi, founder of Kunj Technologies, personally designs and develops every website, so you speak directly to the person building it." }
+      }
+    ]
+  }
+  </script>
+
 </head>
 
 <body class="bg-paper text-ink font-sans antialiased selection:bg-vermilion selection:text-paper">
-  <div id="root"></div>
+  <div id="root">
+    <div style="display:none" aria-hidden="true" id="seo-fallback">
+      <h1>Website Designer &amp; App Developer in Akola, Maharashtra</h1>
+      <p>Kunj Technologies, founded by Darshan Jogi, builds fast, mobile-first business websites and apps for local
+        businesses in Akola. Static websites start from ₹9,999 and dynamic websites with an admin panel start from
+        ₹19,999. Domain, hosting and support are included for the first year. Most websites go live in 1–3 weeks.</p>
+      <h2>Services</h2>
+      <ul>
+        <li>Basic business websites</li>
+        <li>Quote and enquiry websites</li>
+        <li>Online ordering websites</li>
+        <li>Business management apps</li>
+        <li>Website redesign</li>
+      </ul>
+      <p>Contact: WhatsApp or call +91 95118 17720, kunjtechnologies.in@gmail.com</p>
+    </div>
+  </div>
   <script type="module" src="/src/main.tsx"></script>
 </body>
 

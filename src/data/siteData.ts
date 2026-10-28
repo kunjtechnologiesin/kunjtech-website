@@ -459,11 +459,11 @@ export const ABOUT_DATA = {
 export const FAQ_DATA = [
   {
     q: "How much does a website cost?",
-    a: "It depends on how many pages and features you need.Static websites start from ₹9,999 and dynamic websites (with an admin panel) start from ₹24,999. We'll give you a clear quote after a quick chat."
+    a: "Static websites from Kunj Technologies start from ₹9,999 (Basic), ₹14,999 (Standard) and from ₹19,999 (Premium). Dynamic websites with an admin panel start from ₹19,999 (Basic), ₹25,999 (Standard) and from ₹39,999 (Premium). Domain, hosting and support are included for the first year."
   },
   {
     q: "How long does it take?",
-    a: "Most business websites are ready within a few days, depending on the content and features you need."
+    a: "Most business websites go live in 1–3 weeks from the first call, depending on the pages and features you need and how quickly you send your content."
   },
   {
     q: "Will it work on mobile?",
@@ -476,7 +476,20 @@ export const FAQ_DATA = [
   {
     q: "How do customers reach me through the site?",
     a: "We add one-tap WhatsApp, phone call, and enquiry form buttons. Customers reach you directly — no middlemen."
-  }
+  },
+  {
+    q: "Do you provide domain and hosting?",
+    a: "Yes. Domain, hosting and support are included for the first year with every plan. After that, domain renewal is about ₹600–₹1,500 a year, and hosting renewal depends on whether your site is static or dynamic."
+  },
+  {
+    q: "Do you work with businesses outside Akola?",
+    a: "Yes. Kunj Technologies is based in Akola, Maharashtra, and works with businesses across India through WhatsApp, calls and video meetings."
+  },
+  {
+    q: "Who builds the website?",
+    a: "Darshan Jogi, founder of Kunj Technologies, personally designs and develops every website, so you speak directly to the person building it."
+  },
+
 ];
 
 export const MOCKUP_SITES = PORTFOLIO_DATA.projects;
