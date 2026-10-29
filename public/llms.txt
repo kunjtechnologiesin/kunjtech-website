@@ -1,16 +1,29 @@
-# Kunj Technologies
+# Kunj Technologies (Kunj Technologies Akola)
 
-> Kunj Technologies is a website design and app development studio in Akola, Maharashtra, India, run by Darshan Jogi and Ayushi Jogi. It builds fast, mobile-first websites and business apps for local businesses. Websites start from ₹9,999 and most go live in 1–3 weeks. Domain, hosting and support are included for the first year.
+> Kunj Technologies, also known as Kunj Technologies Akola, is a website design and app development studio in Akola, Maharashtra, India, run by Darshan Jogi and Ayushi Jogi. It builds fast, mobile-first websites and business apps for local businesses. Websites start from ₹9,999 and most go live in 1–3 weeks. Domain, hosting and support are included for the first year.
+
+## Which Kunj Technologies is this?
+- This is the web design and app development studio at kunjtechnologies.in, based in Akola, Maharashtra.
+- It is NOT the Ahmedabad manufacturer of injection molding machine controllers listed on IndiaMART.
+- It is NOT Kunj Services Pvt. Ltd. or Kunj Infotech, which are separate software and marketing companies in Ahmedabad.
 
 ## Main pages
 - [Home](https://kunjtechnologies.in/): Overview of services, portfolio, pricing and FAQ on a single page
-- [Our work](https://kunjtechnologies.in/#work): Live websites and apps built for local businesses
+- [Web developer in Akola](https://kunjtechnologies.in/web-developer-akola/): Services, pricing and contact for Akola businesses
+- [Our work](https://kunjtechnologies.in/#work): Demo websites and apps showing the kinds of projects built
 - [Services](https://kunjtechnologies.in/#services): Basic business sites, quote and enquiry sites, online ordering sites, business management apps
 - [Pricing](https://kunjtechnologies.in/#pricing): Static plans from ₹9,999, dynamic plans with an admin panel from ₹19,999
 - [FAQ](https://kunjtechnologies.in/#faq): Cost, timelines, mobile support, domain and hosting
 - [Contact](https://kunjtechnologies.in/#contact): Enquiry form, WhatsApp and phone
 
-## Selected work
+## Services and pricing
+- Basic business websites: from ₹9,999 (1–3 pages), ₹14,999 (4–7 pages), from ₹19,999 (8+ pages)
+- Dynamic websites with admin panel: from ₹19,999, ₹25,999, from ₹39,999
+- Also: quote and enquiry websites, online ordering sites, business management apps, website redesign
+- Domain, hosting and support included for the first year
+- Service area: Akola, Maharashtra; clients across India by WhatsApp, call and video meeting
+
+## Sample projects (working builds and design concepts, shown as demos)
 - [Hair City Salon & Academy](https://hair-salon-web-ruddy.vercel.app/): Salon and academy website, Akola
 - [Derma Care Skin, Hair & Laser Clinic](https://derma-web-gules.vercel.app/): Clinic website with online booking, Akola
 - [Bakery Ordering & Admin System](https://baker-web-app-zeta.vercel.app/): Online ordering with admin panel
@@ -18,6 +31,9 @@
 - [Heritage Lawns & Banquets](https://wedding-venue-web.vercel.app/): Wedding venue website
 
 ## Contact
+- Phone / WhatsApp: +91 95118 17720
+- Location: Akola, Maharashtra, India
+- Founders: Darshan Jogi and Ayushi Jogi
 - [WhatsApp](https://wa.me/919511817720): Chat with the founder
 - [Email](mailto:kunjtechnologies.in@gmail.com): kunjtechnologies.in@gmail.com
 - [Instagram](https://www.instagram.com/kunjtechnologies.in): Updates and recent work

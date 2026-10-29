@@ -33,6 +33,7 @@ export const Footer: React.FC = () => {
               <div className="pt-1 font-mono text-xs text-vermilion-light">
                 📍 AKOLA, MAHARASHTRA, INDIA
               </div>
+              <a href="/web-developer-akola/" className="block pt-2 text-paper-dark hover:text-vermilion-light text-xs">Web developer in Akola</a>
             </div>
 
             {/* 2-Column Links Section */}

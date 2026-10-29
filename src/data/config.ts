@@ -16,8 +16,7 @@ export const BRAND_CONFIG = {
   whatsappNumber: "+91 9511817720",
   whatsappMessage: "Hi Kunj Technologies, I saw your website and would like to discuss a project for my business.",
 
-  // TODO: Add registered custom domain when provided by client (e.g. 'kunjtechnologies.in')
-  domain: "", // [TODO: Domain pending client purchase]
+  domain: "kunjtechnologies.in",
 
   // Verified business email
   email: "kunjtechnologies.in@gmail.com",
