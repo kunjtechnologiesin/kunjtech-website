@@ -132,7 +132,7 @@ type PolicySection = { title: string; text?: string; list?: string[] };
 const PRIVACY: PolicySection[] = [
     {
         title: 'Who we are',
-        text: 'Kunj Technologies is a web and mobile app development business in Akola, Maharashtra, India. Grievance contact: Darshan Jogi.',
+        text: 'Kunj Technologies is a web and mobile app development business in Akola, Maharashtra, India. Grievance contact: Darshan Jogi / Ayushi Jogi.',
     },
     {
         title: 'What we collect',
@@ -245,7 +245,7 @@ const PolicyBody: React.FC<{ intro: string; sections: PolicySection[] }> = ({ in
             </div>
         ))}
         <div className="pt-3 border-t border-ink/10 text-xs sm:text-sm text-ink-muted leading-relaxed">
-            Questions? Contact Darshan Jogi, Kunj Technologies, Akola, Maharashtra, India ·{' '}
+            Questions? Contact Kunj Technologies, Akola, Maharashtra, India ·{' '}
             <a href={`mailto:${CONTACT_EMAIL}`} className="text-vermilion-text underline">{CONTACT_EMAIL}</a> ·{' '}
             <a href={CONTACT_PHONE_LINK} className="text-vermilion-text underline">{CONTACT_PHONE_DISPLAY}</a>
         </div>

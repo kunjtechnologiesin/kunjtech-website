@@ -194,8 +194,8 @@ export const ScrollPreview: React.FC<ScrollPreviewProps> = ({
             {project.previewImage ? (
               <img
                 ref={imgRef}
-                src={project.previewImage}
-                srcSet={project.previewImage.endsWith('.webp') ? `${project.previewImage.replace(/\.webp$/, '-sm.webp')} 600w, ${project.previewImage} 1080w` : undefined}
+                src={project.previewImage.endsWith('.webp') ? project.previewImage.replace(/\.webp$/, '-sm.webp') : project.previewImage}
+                srcSet={project.previewImage.endsWith('.webp') ? `${project.previewImage.replace(/\.webp$/, '-sm.webp')} 380w, ${project.previewImage} 1080w` : undefined}
                 sizes="140px"
                 alt={project.previewAlt || `${project.name} mobile screenshot`}
                 width={project.previewWidth || 390}
@@ -273,8 +273,8 @@ export const ScrollPreview: React.FC<ScrollPreviewProps> = ({
         {project.previewImage ? (
           <img
             ref={imgRef}
-            src={project.previewImage}
-            srcSet={project.previewImage.endsWith('.webp') ? `${project.previewImage.replace(/\.webp$/, '-sm.webp')} 600w, ${project.previewImage} 1080w` : undefined}
+            src={project.previewImage.endsWith('.webp') ? project.previewImage.replace(/\.webp$/, '-sm.webp') : project.previewImage}
+            srcSet={project.previewImage.endsWith('.webp') ? `${project.previewImage.replace(/\.webp$/, '-sm.webp')} 380w, ${project.previewImage} 1080w` : undefined}
             sizes="(max-width: 640px) 340px, 380px"
             alt={project.previewAlt || `${project.name} live website screenshot`}
             width={project.previewWidth || 1080}

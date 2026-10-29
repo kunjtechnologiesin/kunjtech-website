@@ -1,6 +1,6 @@
 # Kunj Technologies
 
-> Kunj Technologies is a website design and app development studio in Akola, Maharashtra, India, founded by Darshan Jogi. It builds fast, mobile-first websites and business apps for local businesses. Websites start from ₹9,999 and most go live in 1–3 weeks. Domain, hosting and support are included for the first year.
+> Kunj Technologies is a website design and app development studio in Akola, Maharashtra, India, run by Darshan Jogi and Ayushi Jogi. It builds fast, mobile-first websites and business apps for local businesses. Websites start from ₹9,999 and most go live in 1–3 weeks. Domain, hosting and support are included for the first year.
 
 ## Main pages
 - [Home](https://kunjtechnologies.in/): Overview of services, portfolio, pricing and FAQ on a single page

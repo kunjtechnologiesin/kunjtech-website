@@ -188,7 +188,7 @@ export const ClientDeliverables: React.FC = () => {
             <Reveal delay={0.1}>
               <div className="bg-ink text-paper rounded-lg border border-ink p-5 sm:p-6 shadow-mobile-soft space-y-4">
                 <span className="stamp-badge bg-vermilion-text text-paper text-[11px]">
-                  DIRECT FOUNDER CONTACT
+                  DIRECT CONTACT
                 </span>
                 <h3 className="font-display font-bold text-xl sm:text-2xl text-paper uppercase leading-snug">
                   Ready to Give Your Business a Professional Website?
@@ -360,10 +360,10 @@ export const ClientDeliverables: React.FC = () => {
                           aria-labelledby="input-industry-label"
                           onClick={() => setIsDropdownOpen((prev) => !prev)}
                           className={`w-full bg-card border p-3 rounded-badge font-sans text-left flex items-center justify-between gap-3 min-h-[50px] transition-all duration-200 outline-none cursor-pointer ${isDropdownOpen
-                              ? 'border-vermilion-text ring-2 ring-vermilion/20 shadow-sm'
-                              : industryError
-                                ? 'border-red-600 focus:ring-2 focus:ring-red-200'
-                                : 'border-ink/30 hover:border-ink/50 focus:border-vermilion-text focus:ring-2 focus:ring-vermilion/20'
+                            ? 'border-vermilion-text ring-2 ring-vermilion/20 shadow-sm'
+                            : industryError
+                              ? 'border-red-600 focus:ring-2 focus:ring-red-200'
+                              : 'border-ink/30 hover:border-ink/50 focus:border-vermilion-text focus:ring-2 focus:ring-vermilion/20'
                             }`}
                         >
                           {(() => {
@@ -434,15 +434,15 @@ export const ClientDeliverables: React.FC = () => {
                                       setIsDropdownOpen(false);
                                     }}
                                     className={`w-full text-left p-2.5 rounded-lg transition-all duration-150 flex items-center justify-between gap-3 group cursor-pointer ${isSelected
-                                        ? 'bg-card border border-ink/20 shadow-sm'
-                                        : 'hover:bg-card/80 border border-transparent hover:border-ink/10'
+                                      ? 'bg-card border border-ink/20 shadow-sm'
+                                      : 'hover:bg-card/80 border border-transparent hover:border-ink/10'
                                       }`}
                                   >
                                     <div className="flex items-center gap-3 min-w-0">
                                       <span
                                         className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-colors ${isSelected
-                                            ? 'bg-vermilion-text text-paper shadow-sm'
-                                            : 'bg-paper-dark text-ink group-hover:bg-vermilion-text/10 group-hover:text-vermilion-text'
+                                          ? 'bg-vermilion-text text-paper shadow-sm'
+                                          : 'bg-paper-dark text-ink group-hover:bg-vermilion-text/10 group-hover:text-vermilion-text'
                                           }`}
                                       >
                                         <ItemIcon className="w-4 h-4" />

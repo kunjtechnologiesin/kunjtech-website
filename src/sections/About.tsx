@@ -21,7 +21,7 @@ export const About: React.FC = () => {
             <h2 className="font-display font-black text-[clamp(1.4rem,5vw,3.75rem)] uppercase tracking-tight text-ink leading-none">
               Direct Communication.{' '}
               <span className="font-serif italic font-normal text-vermilion-text lowercase inline">
-                zero middleman.
+                no middleman.
               </span>
             </h2>
           </div>
@@ -34,14 +34,14 @@ export const About: React.FC = () => {
             <div className="bg-card border border-ink/15 rounded-lg p-5 sm:p-6 shadow-mobile-soft">
               <div className="flex flex-wrap items-center gap-2.5 mb-3">
                 <span className="font-display font-bold text-lg sm:text-xl text-ink">
-                  Darshan Jogi
+                  Darshan Jogi & Ayushi Jogi
                 </span>
                 <span className="font-mono text-[10px] text-emerald-700 font-bold uppercase bg-emerald-500/10 px-2.5 py-0.5 rounded border border-emerald-500/20">
                   ● REPLIES WITHIN 1 HOUR
                 </span>
               </div>
               <p className="font-sans text-base sm:text-lg text-ink leading-relaxed font-medium">
-                I’m Darshan, a website developer in Akola — I build custom websites and apps for shop owners, manufacturers, and local businesses. I handle everything directly from code to Google setup, so you never deal with sales reps or middleman agencies.
+                We’re Darshan and Ayushi, website developers in Akola — we build custom websites and apps for shop owners, manufacturers, and local businesses. We handle everything directly from code to Google setup, so you never deal with sales reps or middleman agencies.
               </p>
             </div>
           </Reveal>
@@ -55,9 +55,9 @@ export const About: React.FC = () => {
 
               <div className="space-y-2.5">
                 {[
-                  "Talk directly with the developer writing your code",
-                  "Clear scopes with straightforward pricing and zero hidden fees",
-                  "Fast WhatsApp updates and reliable post-launch support"
+                  "Talk directly to the developers who write your code",
+                  "Clear scope, straightforward pricing and no hidden fees",
+                  "Quick WhatsApp updates and reliable post-launch support"
                 ].map((principle, idx) => (
                   <div key={idx} className="flex items-start gap-3 py-1.5 border-b border-ink/10 last:border-b-0">
                     <span className="w-5 h-5 rounded-full bg-emerald-700/15 text-emerald-800 font-bold flex items-center justify-center flex-shrink-0 mt-0.5 text-xs">

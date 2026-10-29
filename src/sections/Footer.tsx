@@ -20,8 +20,8 @@ export const Footer: React.FC = () => {
                 <img
                   src={BRAND_LOGO_WHITE}
                   alt={BRAND_NAME}
-                  width={220}
-                  height={210}
+                  width={140}
+                  height={133}
                   className="h-20 sm:h-24 md:h-28 w-auto object-contain group-hover:scale-105 transition-transform"
                 />
               </a>

@@ -76,10 +76,10 @@ export const CTA_CONFIG = {
 
   aboutTertiary: {
     id: 'cta-about-tertiary',
-    label: 'Message Darshan on WhatsApp →',
+    label: 'Message us on WhatsApp →',
     style: 'link',
     destination: 'whatsapp',
-    whatsappMessage: `Hi Darshan! I saw your about note and would like to talk directly about a website project.`,
+    whatsappMessage: `Hi Kunj Technologies! I saw your about note and would like to talk directly about a website project.`,
   },
 
   contactSubmit: {

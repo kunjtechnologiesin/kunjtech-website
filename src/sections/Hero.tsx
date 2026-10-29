@@ -193,11 +193,11 @@ export const Hero: React.FC = () => {
                 <div className="w-full aspect-[16/10] overflow-hidden relative bg-black/10 [container-type:size]">
                   <img
                     src="/hero/desktop-v3-sm.webp"
-                    srcSet="/hero/desktop-v3-sm.webp 600w, /hero/desktop-v3.webp 1080w"
-                    sizes="(max-width: 768px) 340px, 530px"
+                    srcSet="/hero/desktop-v3-sm.webp 360w, /hero/desktop-v3.webp 1080w"
+                    sizes="340px"
                     alt={HERO_DESKTOP_ALT}
-                    width={600}
-                    height={1200}
+                    width={360}
+                    height={720}
                     fetchPriority="high"
                     decoding="async"
                     className="w-full h-auto block select-none pointer-events-none animate-hero-scroll-desktop"
@@ -211,11 +211,11 @@ export const Hero: React.FC = () => {
                 <div className="w-full aspect-[9/18] rounded-xl overflow-hidden relative bg-slate-900 [container-type:size]">
                   <img
                     src="/hero/mobile-v2-sm.webp"
-                    srcSet="/hero/mobile-v2-sm.webp 240w, /hero/mobile-v2.webp 380w"
-                    sizes="130px"
+                    srcSet="/hero/mobile-v2-sm.webp 140w, /hero/mobile-v2.webp 380w"
+                    sizes="120px"
                     alt={HERO_MOBILE_ALT}
-                    width={240}
-                    height={1275}
+                    width={140}
+                    height={743}
                     loading="lazy"
                     decoding="async"
                     className="w-full h-auto block select-none pointer-events-none animate-hero-scroll-mobile"
@@ -366,8 +366,8 @@ export const Hero: React.FC = () => {
                       <div className="w-full aspect-[16/10] overflow-hidden relative bg-black/10 [container-type:size]">
                         <img
                           src={HERO_DESKTOP_IMAGE}
-                          srcSet="/hero/desktop-v3-sm.webp 600w, /hero/desktop-v3.webp 1080w"
-                          sizes="(max-width: 768px) 340px, 530px"
+                          srcSet="/hero/desktop-v3-sm.webp 360w, /hero/desktop-v3.webp 1080w"
+                          sizes="(max-width: 1024px) 450px, 530px"
                           alt={HERO_DESKTOP_ALT}
                           width={1080}
                           height={2160}
@@ -401,7 +401,7 @@ export const Hero: React.FC = () => {
                         <div className="flex-1 overflow-hidden relative [container-type:size]">
                           <img
                             src={HERO_MOBILE_IMAGE}
-                            srcSet="/hero/mobile-v2-sm.webp 240w, /hero/mobile-v2.webp 380w"
+                            srcSet="/hero/mobile-v2-sm.webp 140w, /hero/mobile-v2.webp 380w"
                             sizes="190px"
                             alt={HERO_MOBILE_ALT}
                             width={380}

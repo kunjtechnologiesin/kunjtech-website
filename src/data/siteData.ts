@@ -443,13 +443,13 @@ export const PRICING_DATA = {
 };
 
 export const ABOUT_DATA = {
-  name: "Darshan Jogi",
-  role: "Developer & Studio Owner",
+  name: "Darshan Jogi & Ayushi Jogi",
+  role: "Website Designers & Developers",
   location: "India",
-  bioParagraph1: "I'm Darshan — I build websites for shop owners, factory operators, and small businesses. I focus on making sites that actually bring in customers.",
-  bioParagraph2: "You shouldn't have to pay an agency ₹2 lakh or settle for a broken template. I do everything myself — from design to code. In addition to custom websites, I also build mobile apps and online ordering systems.",
+  bioParagraph1: "Darshan and Ayushi — we build websites for shop owners, factory operators, and small businesses. We focus on making sites that actually bring in customers.",
+  bioParagraph2: "You shouldn't have to pay an agency ₹2 lakh or settle for a broken template. We do everything ourselves — from design to code. In addition to custom websites, we also build mobile apps and online ordering systems.",
   values: [
-    "You talk directly with the person building your site",
+    "You talk directly with the people building your site",
     "We understand your business before we start designing",
     "Clear timelines and straightforward updates",
     "Post-launch support whenever you need it"
@@ -487,7 +487,7 @@ export const FAQ_DATA = [
   },
   {
     q: "Who builds the website?",
-    a: "Darshan Jogi, founder of Kunj Technologies, personally designs and develops every website, so you speak directly to the person building it."
+    a: "Every website is designed and built by Darshan Jogi and Ayushi Jogi at Kunj Technologies, so you speak directly with the people building it."
   },
 
 ];

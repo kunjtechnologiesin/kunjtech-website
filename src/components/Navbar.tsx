@@ -168,8 +168,8 @@ export const Navbar: React.FC<{ activeSectionId?: string }> = ({ activeSectionId
               <img
                 src={mobileMenuOpen ? BRAND_LOGO_WHITE : BRAND_LOGO}
                 alt={BRAND_NAME}
-                width={160}
-                height={114}
+                width={140}
+                height={100}
                 fetchPriority="high"
                 decoding="async"
                 className={`w-auto object-contain shrink-0 group-hover:scale-105 transition-all duration-300 ${isScrolled ? 'h-14 sm:h-14 md:h-16' : 'h-[72px] sm:h-20 md:h-[84px] lg:h-[92px]'
@@ -267,7 +267,7 @@ export const Navbar: React.FC<{ activeSectionId?: string }> = ({ activeSectionId
             </div>
 
             <div className="pt-4 border-t border-paper/10 mt-auto text-center font-mono text-[11px] text-paper/90 tracking-wider">
-              DIRECT FOUNDER CONTACT
+              DIRECT CONTACT
             </div>
           </motion.div>
         )}
